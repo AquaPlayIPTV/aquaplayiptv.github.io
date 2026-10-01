@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AquaPlay IPTV for Samsung TVs</title>
+<meta name="description" content="A free, lightweight IPTV player for Samsung Smart TVs, installed with Apps2Samsung.">
+<style>
+  :root{
+    --bg:#0a0c10; --raised:#101319; --line:#232833;
+    --text:#e8ecf3; --dim:#a2aab8; --accent:#6ea2ff; --on-accent:#08101f;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f4f6fa; --raised:#ffffff; --line:#d3dae6;
+      --text:#0d1017; --dim:#4b5464; --accent:#1f57bb; --on-accent:#ffffff;
+    }
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font:16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  main{ max-width:760px; margin:0 auto; padding:56px 24px 96px; }
+  h1{ font-size:34px; line-height:1.15; margin:0 0 6px; letter-spacing:-.02em; }
+  .sub{ color:var(--dim); margin:0 0 28px; font-size:15px; }
+  h2{ font-size:20px; margin:42px 0 12px; letter-spacing:-.01em; }
+  p{ margin:0 0 14px; }
+  ul, ol{ margin:0 0 14px; padding-left:22px; }
+  li{ margin-bottom:8px; }
+  strong{ font-weight:600; }
+  a{ color:var(--accent); }
+  .shot{ display:block; width:100%; height:auto; border-radius:10px; border:1px solid var(--line); margin:0 0 26px; }
+  .lead{
+    background:var(--raised); border:1px solid var(--line);
+    border-radius:10px; padding:20px 22px; margin:0 0 30px;
+  }
+  .lead p:last-child{ margin-bottom:0; }
+  .buttons{ display:flex; flex-wrap:wrap; gap:12px; margin:18px 0 0; }
+  .btn{
+    display:inline-block; padding:11px 20px; border-radius:8px; font-weight:600;
+    text-decoration:none; border:1px solid var(--accent);
+  }
+  .btn.primary{ background:var(--accent); color:var(--on-accent); }
+  .btn.plain{ color:var(--accent); }
+  .note{ color:var(--dim); font-size:15px; }
+  .cols{ columns:2 260px; column-gap:32px; }
+  .cols li{ break-inside:avoid; }
+  footer{
+    margin-top:52px; padding-top:20px; border-top:1px solid var(--line);
+    color:var(--dim); font-size:14px;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>AquaPlay IPTV for Samsung TVs</h1>
+  <p class="sub">A lightweight IPTV player for Samsung Smart TVs · free, with everything included</p>
+
+  <img class="shot" src="images/samsung-channels.jpg" width="1920" height="1080" alt="The channel list, with the guide beside the picture">
+
+  <div class="lead">
+    <p><strong>AquaPlay is free on Samsung TVs.</strong> It installs with Apps2Samsung, a free tool that puts apps on a Samsung TV from your computer. It works with Samsung Smart TVs from 2018 onwards (Tizen 4.0 or later).</p>
+    <div class="buttons">
+      <a class="btn primary" href="https://github.com/AquaPlayIPTV/aquaplay-samsung/releases/latest">Download AquaPlay (.wgt)</a>
+      <a class="btn plain" href="https://ko-fi.com/devdolev">Support AquaPlay on Ko-fi</a>
+    </div>
+  </div>
+
+  <h2>What it does</h2>
+  <ul class="cols">
+    <li>M3U playlists and Xtream Codes accounts, several at once</li>
+    <li>Set up from your phone: scan a code on the TV and type the details on your phone</li>
+    <li>Send playlists and settings to another TV, and back up to your phone</li>
+    <li>Groups, favourites, recently watched, and the option to hide groups</li>
+    <li>A full programme guide, the schedule beside the picture, and a TV Catalogue over several days</li>
+    <li>Programme reminders, and search across channels and programmes</li>
+    <li>Catch-up where your provider has it: replay, start over, and rewind live TV</li>
+    <li>Movies &amp; Series on a screen of their own</li>
+    <li>Your own channel numbers and remote buttons</li>
+    <li>Audio and subtitle tracks, picture size, sleep timer</li>
+    <li>Profiles, each with their own favourites and history</li>
+    <li>Aqua, OLED and Custom themes, three text sizes, ten languages</li>
+    <li>Parental PIN and channel locks</li>
+    <li>No advertisements, no tracking, no account</li>
+  </ul>
+  <p class="note">AquaPlay is a player only: it comes with no channels or content. You need a playlist from your own provider.</p>
+
+  <h2>Install it</h2>
+  <p>You need the TV and a computer (Windows, macOS or Linux) on the same network.</p>
+  <ol>
+    <li><strong>Turn on Developer Mode on the TV.</strong> Open <em>Apps</em>, then press <strong>1 2 3 4 5</strong> on the remote (or on the on-screen number pad). Switch <em>Developer mode</em> on, type your computer's IP address, choose OK, and restart the TV: hold the power button until it switches off and on again.</li>
+    <li><strong>Get Apps2Samsung</strong> on your computer, from <a href="https://github.com/Apps2Samsung/Apps2Samsung">github.com/Apps2Samsung/Apps2Samsung</a>, and open it. It finds your TV.</li>
+    <li><strong>Download AquaPlay</strong>, the <code>.wgt</code> file from the <a href="https://github.com/AquaPlayIPTV/aquaplay-samsung/releases/latest">latest release</a>.</li>
+    <li><strong>Install it:</strong> in Apps2Samsung, choose your TV, choose to install your own package, and pick the AquaPlay file. The first time, Apps2Samsung may ask you to sign in to a Samsung account, to make the certificate your TV needs.</li>
+    <li><strong>Open AquaPlay</strong> from the TV's Apps, and add your playlist, from the remote or from your phone.</li>
+  </ol>
+
+  <h2>Updating</h2>
+  <p>Download the new <code>.wgt</code> and install it the same way, from the same computer. It replaces the old one and keeps your playlists and settings.</p>
+  <p class="note">A copy installed from a different computer was signed with a different certificate, and the TV will not install over it. Back up to your phone first (AquaPlay's Settings), then delete AquaPlay on the TV (Apps, then the settings gear) and install again.</p>
+
+  <h2>Support AquaPlay</h2>
+  <p>AquaPlay is free on Samsung TVs. If you enjoy it, you can say thank you with a donation on <a href="https://ko-fi.com/devdolev">Ko-fi</a>. In the app, it is in Settings, under <em>Support AquaPlay</em>.</p>
+
+  <h2>Also on Android TV</h2>
+  <p>AquaPlay is on <a href="https://play.google.com/store/apps/details?id=com.aquaplay.tv">Google Play</a> for Android TV and Google TV, with multi-view and recording too.</p>
+
+  <h2>Questions and problems</h2>
+  <p>Open an issue on <a href="https://github.com/AquaPlayIPTV/aquaplay-samsung/issues">GitHub</a>, or write to <a href="mailto:devdolev@gmail.com">devdolev@gmail.com</a>. The <a href="privacy.html">privacy policy</a> says what AquaPlay keeps and sends: in short, nothing about you.</p>
+
+  <footer>AquaPlay IPTV is not made or endorsed by Samsung. Samsung and Tizen are trademarks of Samsung Electronics. Apps2Samsung is an independent community project.</footer>
+
+</main>
+</body>
+</html>
