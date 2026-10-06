@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>AquaPlay IPTV — Crash report</title>
+<!-- A crash report from AquaPlay on a TV (app/js/crash.js), opened by
+     scanning its code in Settings, Advanced, Crash report. The report is in
+     the address after the #, which a browser keeps to itself: this page is
+     the same for everybody, reads it from there, shows it, and copies or
+     shares it when asked. Nothing is sent anywhere by the page. -->
+<style>
+  :root{
+    --bg:#0a0c10; --raised:#101319; --line:#232833;
+    --text:#e8ecf3; --dim:#a2aab8; --accent:#6ea2ff; --on-accent:#0a0c10;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#f4f6fa; --raised:#ffffff; --line:#d3dae6;
+      --text:#0d1017; --dim:#4b5464; --accent:#1f57bb; --on-accent:#ffffff;
+    }
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font:16px/1.6 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  main{ max-width:760px; margin:0 auto; padding:40px 16px 72px; }
+  h1{ font-size:28px; line-height:1.2; margin:0 0 8px; letter-spacing:-.02em; }
+  .sub{ color:var(--dim); margin:0 0 24px; }
+  .actions{ display:flex; gap:10px; flex-wrap:wrap; margin:0 0 18px; }
+  button, .button{
+    font:inherit; font-weight:600; padding:11px 20px; border-radius:10px; cursor:pointer;
+    border:1px solid var(--line); background:var(--raised); color:var(--text); text-decoration:none;
+  }
+  button.primary{ background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+  .said{ color:var(--accent); font-weight:600; min-height:1.6em; margin:0 0 12px; }
+  pre{
+    margin:0; padding:16px; background:var(--raised); border:1px solid var(--line); border-radius:10px;
+    font:13px/1.55 ui-monospace, "Cascadia Mono", Consolas, monospace;
+    white-space:pre-wrap; word-break:break-word; overflow-wrap:anywhere;
+  }
+  .none{ background:var(--raised); border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
+  footer{
+    margin-top:44px; padding-top:18px; border-top:1px solid var(--line);
+    color:var(--dim); font-size:14px;
+  }
+  .hidden{ display:none; }
+</style>
+</head>
+<body>
+<main>
+  <h1>AquaPlay crash report</h1>
+  <p class="sub" id="sub">What AquaPlay was doing on your TV. It has no playlist address, account or channel names in it. Copy it, share it or email it to AquaPlay's developer, with a word about what happened.</p>
+
+  <div id="has" class="hidden">
+    <div class="actions">
+      <button class="primary" id="copy" type="button">Copy</button>
+      <button id="share" type="button" class="hidden">Share</button>
+      <a class="button" id="mail" href="mailto:devdolev@gmail.com">Email it</a>
+    </div>
+    <p class="said" id="said" aria-live="polite"></p>
+    <pre id="text"></pre>
+  </div>
+
+  <div id="none" class="none hidden">
+    There is no report in this link. On the TV, open AquaPlay's Settings, then Advanced, then Crash report, and scan its code with your phone's camera.
+  </div>
+
+  <footer>
+    © 2026 Dolev24. All rights reserved.
+    AquaPlay IPTV is not affiliated with, endorsed by, or connected to Samsung, Google, or any IPTV provider.
+  </footer>
+</main>
+<script>
+(function () {
+  'use strict';
+  /* The app writes a space as + and everything a # cannot carry as %XX
+     (crash.js, enc); a + of its own comes as %2B. */
+  var raw = location.hash.slice(1), text = '';
+  try { text = decodeURIComponent(raw.replace(/\+/g, ' ')); } catch (e) { text = ''; }
+  var $ = function (id) { return document.getElementById(id); };
+  if (!text) { $('none').classList.remove('hidden'); $('sub').classList.add('hidden'); return; }
+  $('has').classList.remove('hidden');
+  $('text').textContent = text;
+  /* The address the privacy policy gives for questions about the app. */
+  $('mail').href = 'mailto:devdolev@gmail.com?subject=' + encodeURIComponent('AquaPlay crash report') +
+    '&body=' + encodeURIComponent('What happened:\n\n\n' + text);
+  var say = function (s) { $('said').textContent = s; };
+
+  function copyOld() {
+    var t = document.createElement('textarea');
+    t.value = text; t.setAttribute('readonly', ''); t.style.position = 'fixed'; t.style.opacity = '0';
+    document.body.appendChild(t); t.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    document.body.removeChild(t);
+    return ok;
+  }
+  $('copy').addEventListener('click', function () {
+    var done = function () { say('Copied. Paste it in your message.'); };
+    var fail = function () { say(copyOld() ? 'Copied. Paste it in your message.' : 'Could not copy: select the text below and copy it.'); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fail);
+    else fail();
+  });
+  if (navigator.share) {
+    $('share').classList.remove('hidden');
+    $('share').addEventListener('click', function () {
+      navigator.share({ title: 'AquaPlay crash report', text: text }).catch(function () {});
+    });
+  }
+})();
+</script>
+</body>
+</html>
