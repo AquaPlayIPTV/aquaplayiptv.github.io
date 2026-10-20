@@ -18,6 +18,8 @@
   td{ word-break:break-word; }
   h2{ font-size:17px; margin:8px 0 6px; }
   .bad{ color:#ff8a95; }
+  ul{ margin:0 0 22px; padding-left:20px; }
+  li{ margin:6px 0; color:#ffd37a; }
   button{ width:100%; margin-top:10px; padding:14px; border:0; border-radius:12px; font:inherit; font-weight:700;
           color:#fff; background:linear-gradient(118deg, #6aa3ff 0%, #4c8dff 46%, #3a64e8 100%); }
   button.alt{ background:transparent; border:2px solid #4c8dff; color:#cfe0ff; }
@@ -39,7 +41,7 @@
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
   var LANGS = { en: 'English', es: 'Spanish', fr: 'French', de: 'German', pt: 'Portuguese', it: 'Italian', pl: 'Polish',
-                ru: 'Russian', hi: 'Hindi', ja: 'Japanese', ko: 'Korean', he: 'Hebrew', ar: 'Arabic', zh: 'Chinese' };
+                ru: 'Russian', hi: 'Hindi', ja: 'Japanese', ko: 'Korean', he: 'Hebrew', ar: 'Arabic', zh: 'Chinese', tr: 'Turkish' };
   var PREMIUM = { off: 'Everything included (no Premium on this TV)', owned: 'Premium', trial: 'Free trial',
                   ended: 'Trial ended (free)', free: 'Free', store: 'Free (installed outside Google Play)', pc: 'Everything included (PC)' };
   var m = /[#&]d=([A-Za-z0-9_-]+)/.exec(location.hash), d = null;
@@ -70,13 +72,79 @@
     ['Last player message', d.err || 'none'],
     ['Shared', d.at ? new Date(d.at).toLocaleString() : '']
   ];
+  /* The channel playing when it was shared, and what its stream held: a
+     track marked UNSUPPORTED is one this TV cannot decode (from 1.0.50). */
+  if (d.chn || d.play) {
+    var pl = d.play || {};
+    rows.splice(rows.length - 1, 0,
+      ['Channel playing', d.chn || 'none'],
+      ['Stream', pl.kind ? pl.kind + ', ' + pl.eng + (pl.size ? ', ' + pl.size : '') + (pl.muted ? ', muted in AquaPlay' : '') : 'nothing playing'],
+      ['Tracks', pl.tracks || 'none reported']);
+  }
+  /* The last stalls (from 1.0.50): how far into the channel each began, how
+     long it lasted, and what the app was reading behind it. */
+  if (d.stalls) {
+    var mmss = function (s) { s = +s || 0; return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2); };
+    rows.splice(rows.length - 1, 0, ['Buffering', d.stalls.length ? d.stalls.map(function (x) {
+      return mmss(x[0]) + ' in, ' + (x[1] || '?') + ' s' + (x[2] ? ' (reading the ' + x[2] + ')' : '');
+    }).join('; ') : 'none this session']);
+  }
+  /* More from 1.0.50: the stream format, the account's limits, the line,
+     memory, the guide's reach and the last errors. */
+  var x = d.x;
+  if (x && typeof x === 'object') {
+    var more = [];
+    if (x.ext || x.fmt) more.push(['Stream format', (x.ext ? x.ext.toUpperCase() + ' playing' : 'nothing playing') +
+      (x.fmt ? '; account allows ' + x.fmt : '') + (x.ts ? '; switched to MPEG-TS after buffering' : '') +
+      (x.tsAsk ? '; asked about MPEG-TS: ' + ({ yes: 'switched', no: 'kept HLS', asked: 'no answer' }[x.tsAsk] || x.tsAsk) : '')]);
+    if (x.exp || x.cons) more.push(['Account', (x.exp ? 'expires ' + x.exp : 'no expiry given') + (x.cons ? ', ' + x.cons + ' connection(s) allowed' : '')]);
+    if (x.vod) more.push(['Films and series', x.vod[0] + ' films, ' + x.vod[1] + ' series']);
+    if (x.mbit) more.push(['Line speed', x.mbit + ' Mbit/s (last measured)']);
+    /* From 1.0.50 an Android TV says its connection itself (x.link). */
+    var ln = x.link;
+    if (ln && ln.type) {
+      more.push(['Network', ({ wifi: 'Wi-Fi', ethernet: 'Cable (Ethernet)', mobile: 'Mobile data' }[ln.type] || ln.type) +
+        (ln.ghz ? ', ' + ln.ghz + ' GHz' : '') + (ln.std ? ', Wi-Fi ' + ln.std : '') +
+        (ln.dbm ? ', signal ' + ln.dbm + ' dBm (' + (ln.dbm >= -60 ? 'good' : ln.dbm >= -70 ? 'fair' : 'weak') + ')' : '') +
+        (ln.link ? ', link ' + ln.link + ' Mbit/s' : '')]);
+    } else if (x.net) more.push(['Network', x.net]);
+    if (x.gcov) more.push(['Guide covers', x.gcov[0] + ' of ' + x.gcov[1] + ' live channels now' + (x.guides ? ' (' + x.guides + ' own guide address' + (x.guides > 1 ? 'es' : '') + ')' : '')]);
+    if (x.free || x.heap) more.push(['Memory', (x.free ? x.free + ' MB free on the TV' : '') + (x.free && x.heap ? ', ' : '') + (x.heap ? 'app using ' + x.heap + ' MB' : '')]);
+    if (x.up != null) more.push(['App open for', x.up + ' min']);
+    if (x.tz != null) more.push(['Time zone', 'UTC' + (x.tz >= 0 ? '+' : '-') + Math.floor(Math.abs(x.tz) / 60) + (Math.abs(x.tz) % 60 ? ':' + ('0' + Math.abs(x.tz) % 60).slice(-2) : '')]);
+    if (x.viewers > 1 || x.simkl) more.push(['Viewers', (x.viewers || 1) + (x.simkl ? ', Simkl signed in' : '')]);
+    if (x.errs && x.errs.length) more.push(['Last errors', x.errs.join(' | ')]);
+    Array.prototype.splice.apply(rows, [rows.length - 1, 0].concat(more));
+  }
   var text = ['AquaPlay settings'];
+  /* Things to check (from 1.0.50): what the report itself points at, for
+     whoever is helping — read from the numbers above, a first guess. */
+  var xx = (d.x && typeof d.x === 'object') ? d.x : {}, stalls = d.stalls || [], ss = d.s || {}, checks = [];
+  if (stalls.length) {
+    if (xx.ext === 'm3u8') checks.push('The channel stopped while playing as HLS: MPEG-TS often plays on (Settings, Stream format).');
+    if (ss.bufferSize === 'small') checks.push('Buffer is set to Small: Auto or Large is steadier (Settings, Buffer).');
+    if (xx.link && xx.link.type === 'wifi' && xx.link.dbm && xx.link.dbm < -70) checks.push('The Wi-Fi signal is weak (' + xx.link.dbm + ' dBm): a cable, or the router nearer the TV, would help.');
+    if (xx.link && xx.link.type === 'wifi' && xx.link.ghz === 2.4) checks.push('The TV is on 2.4 GHz Wi-Fi: 5 GHz, where the router has it, is faster and steadier.');
+    if (xx.mbit && xx.mbit < 10) checks.push('The line measured ' + xx.mbit + ' Mbit/s: under about 10 can be too little for HD.');
+    if (stalls.length >= 2 && !checks.length) checks.push('It buffered ' + stalls.length + ' times this session; the stream and the line look fine, so the provider is the next thing to ask.');
+  }
+  if (d.guide && xx.gcov && !xx.gcov[0]) checks.push('The guide matched none of the live channels: another guide address may fit (Settings, Guide address).');
+  if (xx.free && xx.free < 150) checks.push('The TV has little memory free (' + xx.free + ' MB): restarting the TV may help.');
+  if (checks.length) {
+    var hc = document.createElement('h2'), ul = document.createElement('ul');
+    hc.textContent = 'Things to check';
+    checks.forEach(function (c) { var li = document.createElement('li'); li.textContent = c; ul.appendChild(li); });
+    $('out').appendChild(hc); $('out').appendChild(ul);
+    text.push('', 'Things to check:');
+    checks.forEach(function (c) { text.push('- ' + c); });
+    text.push('');
+  }
   var table = document.createElement('table');
   rows.forEach(function (r) {
     var tr = document.createElement('tr'), th = document.createElement('th'), td = document.createElement('td');
     th.textContent = r[0];
     td.textContent = String(r[1] == null ? '' : r[1]);
-    if (r[0] === 'Last player message' && d.err) td.className = 'bad';
+    if ((r[0] === 'Last player message' && d.err) || (r[0] === 'Tracks' && /UNSUPPORTED/.test(td.textContent))) td.className = 'bad';
     tr.appendChild(th); tr.appendChild(td); table.appendChild(tr);
     text.push(r[0] + ': ' + td.textContent);
   });
