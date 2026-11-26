@@ -3,191 +3,188 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AquaPlay IPTV — Free and Premium</title>
-<style>
-  :root{
-    --bg:#0a0c10; --raised:#101319; --line:#232833;
-    --text:#e8ecf3; --dim:#a2aab8; --accent:#6ea2ff;
-  }
-  @media (prefers-color-scheme: light){
-    :root{
-      --bg:#f4f6fa; --raised:#ffffff; --line:#d3dae6;
-      --text:#0d1017; --dim:#4b5464; --accent:#1f57bb;
-    }
-  }
-  *{ box-sizing:border-box; }
-  body{
-    margin:0; background:var(--bg); color:var(--text);
-    font:16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  main{ max-width:720px; margin:0 auto; padding:56px 24px 96px; }
-  h1{ font-size:34px; line-height:1.15; margin:0 0 6px; letter-spacing:-.02em; }
-  .sub{ color:var(--dim); margin:0 0 40px; font-size:15px; }
-  h2{ font-size:19px; margin:38px 0 10px; letter-spacing:-.01em; }
-  p, li{ color:var(--text); }
-  p{ margin:0 0 14px; }
-  ul{ margin:0 0 14px; padding-left:22px; }
-  li{ margin-bottom:8px; }
-  .lead{
-    background:var(--raised); border:1px solid var(--line);
-    border-radius:10px; padding:20px 22px; margin:0 0 34px;
-  }
-  .lead p:last-child{ margin-bottom:0; }
-  strong{ font-weight:600; }
-  code{
-    font-family:ui-monospace, "Cascadia Mono", Consolas, monospace;
-    font-size:.9em; background:var(--raised);
-    border:1px solid var(--line); border-radius:4px; padding:1px 5px;
-  }
-  a{ color:var(--accent); }
-  footer{
-    margin-top:52px; padding-top:20px; border-top:1px solid var(--line);
-    color:var(--dim); font-size:14px;
-  }
-  .cols{ display:grid; grid-template-columns:1fr; gap:20px; }
-  .card{ background:var(--raised); border:1px solid var(--line); border-radius:10px; padding:20px 22px; }
-  .card h2{ margin-top:0; }
-  .card h3{ font-size:15px; text-transform:uppercase; letter-spacing:.06em; color:var(--dim); margin:22px 0 8px; }
-  .price{ color:var(--dim); font-size:15px; margin:-4px 0 14px; }
-</style>
+<title>AquaPlay features: guide, catch-up, films, subtitles and more</title>
+<meta name="description" content="Everything AquaPlay does on Samsung and Android TVs: the full guide, up to 14 days of catch-up, films and series, subtitles in your language, profiles and your phone as the keyboard.">
+<link rel="icon" href="img/icon.png" type="image/png">
+<meta name="theme-color" content="#0a0e15">
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/inter.css">
+<link rel="stylesheet" href="aura.css">
 </head>
 <body>
-<main>
+<a class="skip" href="#top">Skip to content</a>
+<div class="ground" aria-hidden="true"></div>
+<div class="grid" aria-hidden="true"></div>
+<div class="glow" aria-hidden="true"></div>
 
-  <h1>Free and Premium</h1>
-  <p class="sub">AquaPlay IPTV for Android TV and Google TV · version 1.0.54</p>
-
-  <div class="lead">
-    <p><strong>Everyday watching with one playlist is free and complete.</strong> Premium adds the power and the convenience: one Premium unlocks everything below, with a 7-day free trial. On a Samsung TV, AquaPlay is free with everything included, except the few features marked Android TV only.</p>
+<header class="top">
+  <div class="wrap bar">
+    <nav aria-label="Main">
+      <a href="features.html">Features</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#premium">Premium</a>
+      <a href="index.html#questions">Questions</a>
+    </nav>
+    <a class="logo" href="index.html" aria-label="AquaPlay home"><img src="img/logo.png" alt="AquaPlay" width="900" height="300"></a>
+    <div class="right">
+      <a class="txt" href="samsung.html">Samsung</a>
+      <a class="btn btn-white btn-sm" href="index.html#tvs">Download</a>
+    </div>
   </div>
+</header>
 
-  <div class="cols">
-  <section class="card">
-    <h2>Free</h2>
-    <h3>Playlists and setup</h3>
-    <ul>
-      <li>One playlist: M3U, Xtream Codes or MAG/Stalker portal</li>
-      <li>Add it from your phone by scanning a QR code, or type it in with the remote</li>
-      <li>A guide (EPG) address of your own for an Xtream login, from the remote or from your phone</li>
-      <li>Reload the playlist, and clear cached data for a fresh download</li>
-      <li>Works with slow playlist servers, and with servers that only answer IPTV players</li>
-      <li>Clear messages when something fails, saying what went wrong and what to do</li>
-    </ul>
-    <h3>Live TV</h3>
-    <ul>
-      <li>Channel list with groups, search, favourites and Recently watched</li>
-      <li>Favourites in your own order, and remove channels from Recently watched or clear it</li>
-      <li>Sort channels (provider order, by number, A to Z) and sort groups</li>
-      <li>Favourite groups, pin categories to the top, and set the group order</li>
-      <li>Hide channels and groups you don't watch, and hide empty groups</li>
-      <li>Channel logos from the playlist or from the guide (a setting); channel numbers in the list; alternating row colours</li>
-      <li>Three lines of programme description under the channel name</li>
-      <li>Type a channel number to jump to it; 0 for the last channel</li>
-      <li>CH+ and CH− change channel on the list too, and the list comes back on the group you started from</li>
-      <li>Or CH+ and CH− page the channel list, the groups and the guide grid, either way round (a setting)</li>
-      <li>Left and right scroll the list a page at a time (a setting)</li>
-      <li>Or hold Left or Right on the list to go to the next or previous group (a setting)</li>
-      <li>Back goes to full screen from any screen, and holding Back exits (a setting)</li>
-      <li>Resume the last channel when the app opens</li>
-      <li>Hold OK for a menu while watching: audio, subtitles, Start over, schedule, catch-up guide, reload channel</li>
-      <li>Hold OK on the list for the channel's schedule, and in the Groups window for Go to letter</li>
-      <li>Reconnects a channel that drops, and reloads a frozen channel, by itself (settings)</li>
-      <li>What is playing carries on behind Settings</li>
-      <li>Data saver: holds channels that come in several qualities to a lower one</li>
-      <li>Stream quality for each channel, from its Hold OK menu</li>
-    </ul>
-    <h3>TV guide and catch-up</h3>
-    <ul>
-      <li>One guide (EPG) of your own, or the one from your playlist, refreshed daily</li>
-      <li>Now and next on the info bar, the channel's schedule beside the preview, and the full guide grid</li>
-      <li>Programme descriptions with pictures, adjustable size and auto-scrolling</li>
-      <li>Stored descriptions: how far back programme stories are kept (Low, Medium, High, Always)</li>
-      <li>Guide channel: choose a channel's guide by hand, with suggestions and search</li>
-      <li>The guide grid follows Large text</li>
-      <li>TV Catalogue for today and yesterday</li>
-      <li>Catch-up for the last day: catch-up browser, Start over, rewind live TV</li>
-      <li>Catch-up shows the programme you wind to and how many days your provider keeps</li>
-      <li>Catch-up for many playlist formats, and Flussonic catch-up carries on into the next programme</li>
-      <li>A catch-up programme ends back where you picked it, and the catch-up screen lists its other airings</li>
-      <li>Catch-up channels marked with a clock</li>
-      <li>Guide time offset, for a guide whose times are wrong</li>
-    </ul>
-    <h3>Movies and Series</h3>
-    <ul>
-      <li>The whole Movies and Series library, with posters, ratings and stories</li>
-      <li>A page for each film, with its backdrop, story, cast and director, and series in the same look with a row of episodes</li>
-      <li>Continue watching: resume a film or episode where you stopped</li>
-      <li>A film or episode whose connection drops reconnects and carries on where it stopped (a setting)</li>
-      <li>Episodes and seasons, with watched marks; mark watched or not watched; hide watched</li>
-      <li>Up next: the next episode starts by itself, with a countdown you can set</li>
-      <li>Sync what you watch to your Simkl account</li>
-      <li>Hide films and series, and show or hide categories</li>
-      <li>Poster size, poster quality, or plain tiles with no posters</li>
-      <li>Movies and Series together or as separate tiles on the home screen</li>
-      <li>Playback speed for films and episodes (Android TV only)</li>
-      <li>Built-in film engine (Nova) for hard-to-play files such as MKV</li>
-    </ul>
-    <h3>Playback and subtitles</h3>
-    <ul>
-      <li>Choice of audio and subtitle track, picture size, buffer and stream format</li>
-      <li>Preferred subtitle language</li>
-      <li>Captions in the stream (CC), and subtitle tracks named by their language</li>
-      <li>Subtitle sync</li>
-      <li>Subtitle size and height, in white</li>
-      <li>Play/Pause goes back to the picture from any screen</li>
-      <li>Screensaver, so a still picture doesn't burn in</li>
-    </ul>
-    <h3>Look and controls</h3>
-    <ul>
-      <li>Aqua theme, text size, and several channel screen layouts</li>
-      <li>Clock and date format over the channel list; info bar duration</li>
-      <li>Choose the start screen: Live TV or Movies and Series</li>
-      <li>17 languages, including Hebrew and Arabic (right to left)</li>
-      <li>Works with the remote alone: arrows, OK and Back do everything</li>
-      <li>Settings pages with search</li>
-      <li>On a Samsung TV, new versions install themselves (a setting)</li>
-      <li>Share my settings with someone helping you, as a short link (no passwords or addresses included)</li>
-      <li>Crash reports and Diagnostics for faster help, and the AquaPlay Discord in Settings</li>
-      <li>7-day free trial of every Premium feature</li>
-    </ul>
+<main id="top">
+  <section class="page-hero wrap" aria-labelledby="hero-h">
+    <h1 id="hero-h" class="in" style="--d:.05s">Everything AquaPlay does</h1>
+    <p class="lead in" style="--d:.15s">Live TV with the full guide, up to 14 days of catch-up, films and series, subtitles in your language, and your phone as the TV's keyboard. All of it with the remote's arrows, OK and Back.</p>
+    <div class="ctas in" style="--d:.25s">
+      <a class="btn btn-white" href="#install">Download AquaPlay for free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="index.html#premium">Premium</a>
+    </div>
   </section>
 
-  <section class="card">
-    <h2>Premium</h2>
-    <p class="price">$5 a month, $10 a year, or $25 once, through Google Play</p>
-    <ul>
-      <li>More than one playlist, and sending a playlist to another TV</li>
-      <li>Catch-up further back than one day: up to 14 days, if your provider keeps them</li>
-      <li>TV Catalogue beyond today and yesterday, and programme reminders</li>
-      <li>More than one guide, read together</li>
-      <li>Multi-view: up to four channels at once, with a warning when your playlist allows fewer streams</li>
-      <li>Recording, including scheduling a programme from the guide</li>
-      <li>Profiles, each with their own favourites and history</li>
-      <li>Parental PIN, locked channels and locked groups, and adult channels hidden behind a PIN</li>
-      <li>Your own channel numbers, moving channels, and custom remote buttons</li>
-      <li>Your own channel groups: add channels, rename and delete groups</li>
-      <li>Channel zapping with Up and Down while watching full screen</li>
-      <li>Resume the last channel straight in full screen</li>
-      <li>The clock while watching full screen</li>
-      <li>Skip intros and credits, where TheIntroDB knows them (experimental)</li>
-      <li>Audio boost for quiet channels and films (Android TV only)</li>
-      <li>Sleep timer and stream delay warning</li>
-      <li>OLED and Custom themes (accent colours, backgrounds, brightness)</li>
-      <li>Subtitles turned on by themselves when the sound is in another language</li>
-      <li>Subtitles found online (OpenSubtitles) in your language, and loaded automatically</li>
-      <li>The subtitle look: 15 more colours, dark box, outline, both together, box opacity, bold or regular, and subtitles sent from your phone</li>
-      <li>Backup and restore, to your phone or a file</li>
-    </ul>
-  </section>
+  <div class="wrap">
+    <div class="feat-grid">
+      <section class="feat wide" id="live" aria-labelledby="live-h">
+        <h2 id="live-h">A guide that fills the screen</h2>
+        <ul class="flist">
+            <li><b>A full TV guide</b> as a grid, beside the picture, or as a TV Catalogue over several days, as far ahead as your provider's guide goes.</li>
+            <li><b>Three layouts</b> for the channel list: classic, grid, or beside the picture.</li>
+            <li><b>Programme info</b> with its description, which scrolls by itself at the speed you choose.</li>
+            <li><b>Search</b> across channels and programmes, and reminders before a show starts.</li>
+            <li><b>Groups and favourites:</b> favourite channels and favourite groups, recently watched, show, hide, reorder and pin groups.</li>
+            <li><b>Your channel order:</b> sort by number or A to Z, move and hide channels, and give them your own numbers.</li>
+            <li><b>Channel versions</b> (FHD, HD, backup) kept together, and the stream quality you pick for each channel, with a fallback if it will not play.</li>
+            <li><b>Hold OK</b> on a channel for its menu; hold Left or Right to change group; CH+ and CH− can turn a page of the list.</li>
+            <li><b>Your remote, your way:</b> choose what the arrow keys do and set your own buttons.</li>
+            <li><b>A clock</b> on full screen, in the corner you choose; full screen picks up where you left it.</li>
+            <li><b>Your guide, matched:</b> use your provider's guide or your own guide address, match a channel to its guide by hand, and take channel logos from the playlist or the guide.</li>
+            <li><b>Guide memory</b> sizes (Normal, Large, Largest, Custom) for very big guides, and a choice of how many programme descriptions are kept.</li>
+          </ul>
+      </section>
+      <section class="feat" id="catch-up" aria-labelledby="catch-up-h">
+        <h2 id="catch-up-h">Missed it? Play it from the start</h2>
+        <ul class="flist">
+            <li><b>Replay past shows</b> from up to 14 days back, where your provider keeps them.</li>
+            <li><b>Start over</b> a show that is on now.</li>
+            <li><b>Rewind live TV</b> and jump back to live.</li>
+            <li><b>A catch-up list</b> for each channel, with what you picked from it kept in view.</li>
+          </ul>
+      </section>
+      <section class="feat" id="films" aria-labelledby="films-h">
+        <h2 id="films-h">A cinema shelf from your own account</h2>
+        <ul class="flist">
+            <li><b>Movies and Series</b> on screens of their own, from your Xtream Codes account, with categories you can show, hide and pin, and Recently added.</li>
+            <li><b>A details page</b> for every film: backdrop, story, cast, director and Play.</li>
+            <li><b>Series pages</b> with seasons and a row of episode cards; Continue and Up next take you to the right episode.</li>
+            <li><b>Watched marks</b> on films and episodes, set by hand or as you finish them.</li>
+            <li><b>Simkl</b> marks what you finish on your Simkl list.</li>
+            <li><b>Skip intro</b> with times from TheIntroDB, or an intro you mark yourself.</li>
+            <li><b>Playback speed</b> and scrubbing through a film.</li>
+          </ul>
+      </section>
+      <section class="feat" id="subtitles" aria-labelledby="subtitles-h">
+        <h2 id="subtitles-h">Subtitles in your language, on by themselves</h2>
+        <ul class="flist">
+            <li><b>Your language, on by itself:</b> live channels and films switch subtitles on in the language you pick, including DVB subtitles and the TV's own captions on Samsung.</li>
+            <li><b>Subtitles found online</b> when a film has none in your language.</li>
+            <li><b>Subtitle size and look,</b> and a delay to move them earlier or later.</li>
+            <li><b>Audio and subtitle tracks</b> named by their language, even when the stream names them oddly.</li>
+          </ul>
+      </section>
+      <section class="feat" id="yours" aria-labelledby="yours-h">
+        <h2 id="yours-h">Your look, your profiles, your locks</h2>
+        <ul class="flist">
+            <li><b>Aqua, OLED and Custom</b> themes, with accent colours.</li>
+            <li><b>Three text sizes</b> and 17 languages, Hebrew and Arabic right to left.</li>
+            <li><b>Profiles</b> ("Who's watching"), each with its own favourites and history.</li>
+            <li><b>A parental PIN</b> and channel locks.</li>
+            <li><b>Picture size</b> and a sleep timer.</li>
+          </ul>
+      </section>
+      <section class="feat wide" id="phone" aria-labelledby="phone-h">
+        <h2 id="phone-h">The TV's keyboard is your phone</h2>
+        <ul class="flist">
+            <li><b>Add a playlist</b> (M3U link or file, Xtream Codes login, Stalker/MAG portal) by typing the TV's code on your phone; for Stalker/MAG, AquaPlay can make the MAC address for you.</li>
+            <li><b>Several playlists</b> at once, each one editable.</li>
+            <li><b>Send</b> your playlists and settings to another TV, and back up to your phone and restore from it.</li>
+            <li><b>Encrypted on the phone</b> before anything leaves it; only your TV can read it.</li>
+          </ul>
+        <a class="more" href="https://aquaplay.live/pair.html">Open the pairing page <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg></a>
+      </section>
+      <section class="feat" id="playback" aria-labelledby="playback-h">
+        <h2 id="playback-h">Steady playback on your connection</h2>
+        <ul class="flist">
+            <li><b>Stream format</b> Auto, MPEG-TS or HLS; if HLS keeps stalling, AquaPlay offers to switch.</li>
+            <li><b>Buffer size</b> to suit your line, and a warning when the stream keeps running dry.</li>
+            <li><b>Reconnects by itself</b> after a drop, and opens a channel again if it starts without picture.</li>
+            <li><b>A connection speed</b> check, and a data saver that caps the quality, by hand or automatically.</li>
+          </ul>
+      </section>
+      <section class="feat" id="help" aria-labelledby="help-h">
+        <h2 id="help-h">Kept up to date, and easy to get help</h2>
+        <ul class="flist">
+            <li><b>What's new</b> after every update.</li>
+            <!-- held until 1.0.54 is released (owner, 25 Nov 2026); then add back: "it installs it itself and asks you to restart, with a Check now button." -->
+            <li><b>On Samsung,</b> AquaPlay tells you when a new version is out.</li>
+            <li><b>A crash report</b> and Share my settings, each opened on your phone with a code, sent only if you send it.</li>
+            <li><b>Support AquaPlay</b> on Ko-fi, and an About page.</li>
+          </ul>
+      </section>
+    </div>
   </div>
 
-  <footer>
-    <p>AquaPlay does not provide any channels or content; you need your own playlist from your provider. Prices are shown in your own currency in Google Play.</p>
-    <p>Some features that are free today may become part of Premium in the future.</p>
-    <p><a href="https://aquaplayiptv.github.io/">AquaPlay IPTV</a> · <a href="privacy.html">Privacy Policy</a></p>
-  </footer>
+  <section class="block wrap" id="platforms" aria-labelledby="plat-h">
+    <div class="head center">
+      <h2 id="plat-h">One app, two kinds of TV.</h2>
+    </div>
+    <div class="minis">
+      <div class="mini"><h3>Free on Samsung</h3><p>Every feature, no account, no ads. Installs with Apps2Samsung. <a href="samsung.html">How to install it</a></p></div>
+      <div class="mini"><h3>Multi-view</h3><p>Several channels on screen at once, on Android TV.</p></div>
+      <div class="mini"><h3>Recording</h3><p>Record to the box's own storage, on Android TV.</p></div>
+      <div class="mini"><h3>Premium on Android TV</h3><p>Bought in the app on Google Play. For the AquaPlay.apk from this website, $25 once, on the website. <a href="index.html#premium">How</a></p></div>
+    </div>
+  </section>
 
+  <!-- the download: a pure black band with two plain black buttons, store-badge style (own icons, no store logos) -->
+  <section class="get" id="install" aria-labelledby="tvs-h">
+    <div class="wrap">
+      <h2 id="tvs-h">Get AquaPlay.</h2>
+      <p class="lead">Free on Samsung. On Google Play for Android TV and Google TV.</p>
+      <div class="badges">
+        <a class="badge" href="samsung.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8"/></svg>
+          <span><small>Download for</small>Samsung TV</span>
+        </a>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=com.aquaplay.tv">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M10 8.2v4.6l4-2.3Z" fill="currentColor"/><path d="M8 21h8"/></svg>
+          <span><small>Download for</small>Android TV</span>
+        </a>
+      </div>
+      <p class="note">On Samsung, AquaPlay is installed once from a computer with Apps2Samsung. <a href="samsung.html">How it works</a></p>
+      <a class="community" href="https://discord.gg/5A5mDrwK8w">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>
+        <span><b>Join the AquaPlay Discord</b><small>Ask questions and get help from other AquaPlay users</small></span>
+      </a>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p class="notice">⚠️ AquaPlay is a media player application ONLY. We do not provide, host, sell, or distribute TV channels, movies, playlists, or IPTV subscriptions. Users must provide their own legally acquired content.</p>
+    <div class="frow">
+      <a href="index.html" aria-label="AquaPlay home"><img src="img/logo.png" alt="AquaPlay" width="900" height="300"></a>
+      <nav aria-label="Footer">
+        <a href="features.html">Features</a><a href="samsung.html">Samsung</a><a href="https://aquaplay.live/pair.html">Pairing page</a><a href="https://discord.gg/5A5mDrwK8w">Discord</a><a href="https://x.com/AquaPlayIPTV">X</a><a href="https://ko-fi.com/devdolev">Ko-fi</a>
+      </nav>
+      <small>© 2026 AquaPlay</small>
+    </div>
+    <div class="legal">
+      <span>Samsung, Tizen, Google Play, Android TV and Fire TV are trademarks of their owners.</span>
+      <span><a href="privacy.html">Privacy</a><a href="terms-of-service.html">Terms</a><a href="accessibility-statement.html">Accessibility</a><a href="dmca.html">Copyright and DMCA</a></span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
