@@ -46,6 +46,9 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
       <a href="#how">How it works</a>
       <a href="#premium">Premium</a>
       <a href="#questions">Questions</a>
+      <details class="menu"><summary aria-label="Menu">Menu</summary>
+        <div class="menu-panel"><a href="features.html">Features</a><a href="#how">How it works</a><a href="#premium">Premium</a><a href="#questions">Questions</a><a href="samsung.html">Samsung TV</a><a href="#tvs">Download AquaPlay for free</a></div>
+      </details>
     </nav>
     <a class="logo" href="#top" aria-label="AquaPlay home"><img src="img/logo.png" alt="AquaPlay" width="900" height="300"></a>
     <div class="right">
@@ -92,7 +95,7 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
 
   <section class="block wrap" id="features" aria-labelledby="feat-h">
     <div class="orb" style="top:50%;left:0;background:rgba(var(--blue),.1)" aria-hidden="true"></div>
-    <div class="head">
+    <div class="head center">
       <h2 id="feat-h">Everything a night of TV needs.</h2>
       <p class="lead">Live channels, the shows you missed, films and series, in your language. All of it with the arrows and OK on the remote you already hold.</p>
     </div>
@@ -118,7 +121,7 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
         <p>17 languages, Hebrew and Arabic right to left. Live channels and films switch subtitles on in yours by themselves.</p>
       </div>
     </div>
-    <a class="more" href="features.html">See all 44 features <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg></a>
+    <a class="more" href="features.html">See every feature <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg></a>
   </section>
 
   <section class="steps-sec" id="how" aria-labelledby="how-h">
@@ -141,22 +144,45 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
     </div>
   </section>
 
+  <section class="says" aria-labelledby="says-h">
+    <div class="orb2" aria-hidden="true"></div>
+    <div class="wrap block" style="position:relative">
+      <h2 id="says-h">Built to stay light.</h2>
+      <div class="say-grid">
+        <div class="say">
+          <h3>Made for the TV you already own</h3>
+          <p>Not just the newest one. AquaPlay runs on Samsung TVs from 2017, and very big guides get memory sizes of their own, so the list keeps up with the remote.</p>
+          <p class="facts">Lightweight · fast · Tizen 3.0 and later</p>
+        </div>
+        <div class="say">
+          <h3>Maintained, release after release</h3>
+          <p>Every update comes with its own What's new, in your language. On Samsung, AquaPlay tells you when a new version is out.</p>
+          <p class="facts">Stable · responsive · kept up to date</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- the download: a pure black band with two plain black buttons, store-badge style (own icons, no store logos) -->
   <section class="get" id="tvs" aria-labelledby="tvs-h">
     <div class="wrap">
       <h2 id="tvs-h">Get AquaPlay.</h2>
-      <p class="lead">Free on Samsung. On Google Play for Android TV and Google TV.</p>
+      <p class="lead">Free on Samsung. On Google Play for Android TV and Google TV. The APK for Fire TV and other boxes.</p>
       <div class="badges">
         <a class="badge" href="samsung.html">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8"/></svg>
-          <span><small>Download for</small>Samsung TV</span>
+          <span><small>Install on</small>Samsung TV</span>
         </a>
         <a class="badge" href="https://play.google.com/store/apps/details?id=com.aquaplay.tv">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M10 8.2v4.6l4-2.3Z" fill="currentColor"/><path d="M8 21h8"/></svg>
-          <span><small>Download for</small>Android TV</span>
+          <span><small>Download from</small>Google Play</span>
+        </a>
+        <a class="badge" href="https://github.com/AquaPlayIPTV/aquaplay-android/releases/latest/download/AquaPlay.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span><small>Download the</small>APK</span>
         </a>
       </div>
-      <p class="note">On Samsung, AquaPlay is installed once from a computer with Apps2Samsung. <a href="samsung.html">How it works</a></p>
+      <p class="note">On Samsung, AquaPlay is installed once from a computer with Apps2Samsung. <a href="samsung.html">How it works</a><br>On Fire TV, open Downloader and type <code>1167505</code>.</p>
       <a class="community" href="https://discord.gg/5A5mDrwK8w">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>
         <span><b>Join the AquaPlay Discord</b><small>Ask questions and get help from other AquaPlay users</small></span>
@@ -169,8 +195,13 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
   <section class="block wrap prem" id="premium" aria-labelledby="prem-h">
     <div class="orb" style="top:20%;right:-8%;background:rgba(var(--sky),.07)" aria-hidden="true"></div>
     <div class="head center">
-      <h2 id="prem-h">Premium. Pay once, keep it.</h2>
-      <p class="lead">For the AquaPlay APK on Fire TV and Android boxes without Google Play. One payment unlocks every Premium feature on one TV. No subscription, nothing renews.</p>
+      <h2 id="prem-h">Premium for the AquaPlay APK.</h2>
+      <p class="lead">Pay once, keep it. For Fire TV and Android boxes without Google Play. One payment unlocks every Premium feature on one TV. No subscription, nothing renews.</p>
+    </div>
+    <div class="where">
+      <div><b>Samsung TV</b>Every feature, free. <a href="https://ko-fi.com/devdolev">Ko-fi</a> if you'd like to give something back.</div>
+      <div><b>Google Play</b>Buy Premium inside the app, through Google Play.</div>
+      <div class="here"><b>APK</b>Fire TV and boxes without Google Play: install it with Downloader, code <code>1167505</code>, and buy Premium here.</div>
     </div>
     <div class="prem-grid">
       <div class="price">
@@ -203,30 +234,6 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
           <h3>Pay once</h3>
           <p>Premium turns on by itself on the TV within a minute, and the TV says thank you.</p></li>
       </ol>
-    </div>
-    <div class="where">
-      <div><b>Samsung TV</b>Every feature, free. <a href="https://ko-fi.com/devdolev">Ko-fi</a> if you'd like to give something back.</div>
-      <div><b>Google Play</b>Buy Premium inside the app, through Google Play.</div>
-      <div class="here"><b>APK</b>Fire TV and boxes without Google Play: install it with Downloader, code <code>1167505</code>, and buy Premium here.</div>
-    </div>
-  </section>
-
-  <section class="says" aria-labelledby="says-h">
-    <div class="orb2" aria-hidden="true"></div>
-    <div class="wrap block" style="position:relative">
-      <h2 id="says-h">Built to stay light.</h2>
-      <div class="say-grid">
-        <div class="say">
-          <h3>Made for the TV you already own</h3>
-          <p>Not just the newest one. AquaPlay runs on Samsung TVs from 2017, and very big guides get memory sizes of their own, so the list keeps up with the remote.</p>
-          <p class="facts">Lightweight · fast · Tizen 3.0 and later</p>
-        </div>
-        <div class="say">
-          <h3>Maintained, release after release</h3>
-          <p>Every update comes with its own What's new, in your language. On Samsung, AquaPlay tells you when a new version is out.</p>
-          <p class="facts">Stable · responsive · kept up to date</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -266,10 +273,11 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
   <section class="close" aria-labelledby="close-h">
     <div class="wrap">
       <h2 id="close-h">Ready to watch?</h2>
-      <p class="lead">Bring your playlist. AquaPlay does the rest, on Samsung and Android TV.</p>
+      <p class="lead">Bring your playlist. AquaPlay does the rest, on Samsung, Android TV and Fire TV.</p>
       <div class="ctas">
         <a class="btn btn-white btn-lg" href="samsung.html">Install on Samsung <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-        <a class="btn btn-ghost btn-lg" href="https://play.google.com/store/apps/details?id=com.aquaplay.tv">Download for Android TV</a>
+        <a class="btn btn-ghost btn-lg" href="https://play.google.com/store/apps/details?id=com.aquaplay.tv">Download from Google Play</a>
+        <a class="btn btn-ghost btn-lg" href="https://github.com/AquaPlayIPTV/aquaplay-android/releases/latest/download/AquaPlay.apk">Download the APK</a>
       </div>
     </div>
   </section>
@@ -291,5 +299,8 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
     </div>
   </div>
 </footer>
+<script>/* the phone menu closes after a pick, a tap outside, or Escape */
+addEventListener("click",e=>{const m=document.querySelector(".menu[open]");if(m&&(e.target.closest(".menu-panel a")||!e.target.closest(".menu")))m.open=false});
+addEventListener("keydown",e=>{const m=document.querySelector(".menu[open]");if(m&&e.key==="Escape"){m.open=false;m.querySelector("summary").focus()}});</script>
 </body>
 </html>

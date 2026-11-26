@@ -1,24 +1,23 @@
 /* aura.css: the look of every page of aquaplay.live (made by .taste-skill/make-aura-pages.js from the Aura home). */
 :root {
-  --bg: #0a0e15; --bg2: #18181b; --ink: #f4f4f5; --ink2: #a1a1aa; --ink3: #8b8b94;
+  --bg: #0a0e15; --bg2: #121821; --ink: #f4f4f5; --ink2: #aab3c2; --ink3: #8d97a8;
   --line: rgba(255,255,255,.06); --line2: rgba(255,255,255,.1); --card: rgba(255,255,255,.02);
   --blue: 58,139,255; --sky: 127,193,236; --teal: 31,176,208;
   --ease: cubic-bezier(.16,1,.3,1); --max: 1280px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { background: var(--bg); color-scheme: dark; scroll-behavior: smooth; scrollbar-color: #3f3f46 var(--bg); scroll-padding-top: 88px; }
+html { background: var(--bg); color-scheme: dark; scroll-behavior: smooth; scrollbar-color: #2a3442 var(--bg); scroll-padding-top: 88px; }
 body { min-height: 100vh; display: flex; flex-direction: column; background: var(--bg); color: var(--ink2);
   font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; font-feature-settings: "cv11","ss01"; overflow-x: clip; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 svg { flex: none; }
-::selection { background: #27272a; color: var(--ink); }
 :focus-visible { outline: 2px solid rgb(var(--sky)); outline-offset: 3px; border-radius: 8px; }
 .skip { position: absolute; left: 16px; top: -60px; z-index: 99; background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 99px; font-weight: 500; }
 .skip:focus { top: 12px; }
 .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-/* the ground: zinc black, a 24px grid at 4%, AquaPlay's blue glowing from the top */
+/* the ground: navy, a 24px grid at 4%, AquaPlay's blue glowing from the top */
 .ground, .grid, .glow { position: fixed; pointer-events: none; }
 .ground { inset: 0; z-index: -3; background: radial-gradient(ellipse 90% 55% at 50% 112%, rgba(var(--teal),.13), transparent 70%), radial-gradient(ellipse 55% 45% at -5% 62%, rgba(var(--blue),.07), transparent 70%), var(--bg); }
 .grid { inset: 0; z-index: -2; background-image: linear-gradient(to right, rgba(127,193,236,.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(127,193,236,.045) 1px, transparent 1px); background-size: 24px 24px; }
@@ -76,10 +75,8 @@ h3 { font-size: 20px; letter-spacing: -.02em; line-height: 1.25; }
   -webkit-mask: url(img/logo.png) center / 100% 100% no-repeat; mask: url(img/logo.png) center / 100% 100% no-repeat;
   background: linear-gradient(105deg, transparent 42%, rgba(255,255,255,.9) 50%, transparent 58%) no-repeat; background-size: 260% 100%;
   background-position: 130% 0; animation: shine 1.5s cubic-bezier(.45,0,.2,1) 1.5s both; }
-@keyframes mark-in { from { opacity: 0; transform: scale(.9) translateY(16px); filter: blur(16px); } to { opacity: 1; transform: none; filter: none; } }
 @keyframes glow-in { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
 @keyframes shine { from { background-position: 130% 0; } to { background-position: -30% 0; } }
-@keyframes mark-out { to { opacity: 0; transform: translateY(-40px) scale(1.08); filter: blur(14px); } }
 @supports (animation-timeline: view()) {
   .mark-wrap { animation: mark-out linear forwards; animation-timeline: view(); animation-range: cover 52% cover 92%; }
 }
@@ -93,7 +90,7 @@ h3 { font-size: 20px; letter-spacing: -.02em; line-height: 1.25; }
 .strip li svg { width: 22px; height: 22px; }
 
 /* features: 2x2 */
-.block { padding-block: 128px; }
+.block { padding-block: 96px; }
 .head { max-width: 672px; margin-bottom: 80px; position: relative; z-index: 1; }
 .head h2 { margin-bottom: 20px; }
 .head.center { margin-inline: auto; text-align: center; }
@@ -130,7 +127,7 @@ h3 { font-size: 20px; letter-spacing: -.02em; line-height: 1.25; }
 
 /* get AquaPlay: a pure black band, two black store-style buttons (Apple-like: black, thin grey rim, small line over a big one) */
 .get { background: #000; border-block: 1px solid rgba(255,255,255,.06); text-align: center; }
-.get .wrap { padding-block: 128px; }
+.get .wrap { padding-block: 96px; }
 .get h2 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; letter-spacing: -.05em; line-height: 1; margin-bottom: 20px; }
 .get .lead { font-size: 18px; margin-bottom: 48px; }
 .badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
@@ -170,7 +167,7 @@ summary { list-style: none; display: flex; align-items: center; justify-content:
   color: #e4e4e7; font-weight: 500; font-size: 16px; letter-spacing: -.01em; transition: color .2s; }
 summary::-webkit-details-marker { display: none; }
 summary:hover { color: #fff; }
-summary svg { width: 22px; height: 22px; color: #71717a; transition: transform .3s var(--ease), color .2s; }
+summary svg { width: 22px; height: 22px; color: var(--ink3); transition: transform .3s var(--ease), color .2s; }
 summary:hover svg { color: #d4d4d8; }
 details[open] summary svg { transform: rotate(-45deg); }
 details p { margin-top: 8px; padding: 0 32px 16px 0; font-size: 15px; line-height: 1.65; }
@@ -350,3 +347,104 @@ details a.inline, .where a { color: #9dd4f5; text-decoration: underline; text-un
   .page-hero { padding-block: 24px 48px; }
   .vsteps li { padding-left: 64px; }
 }
+
+/* ===== Refinement, 26 Nov 2026 (owner: liquid-glass cards with visible borders, a cleaner way for the logo to
+   leave, more colour overall, a better top bar and the line under it) ===== */
+/* Colour: the greys and lines take the navy's cool blue, so text, rules and borders belong to one palette. */
+:root { --line: rgba(157,212,245,.08); --line2: rgba(157,212,245,.14);
+  --glass-edge: rgba(190,225,255,.17); --glass-edge-hi: rgba(190,225,255,.32); }
+::selection { background: rgba(var(--blue),.35); color: #fff; }
+
+/* Liquid glass: frosted, saturating the glows behind it, light along the top edge, a soft shadow beneath. */
+.card, .price {
+  background:
+    radial-gradient(120% 90% at 0% 0%, rgba(255,255,255,.07), transparent 45%),
+    linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.015) 45%, rgba(var(--sky),.035));
+  border: 1px solid var(--glass-edge);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), inset 0 -1px 0 rgba(255,255,255,.03), 0 24px 48px -24px rgba(0,0,0,.7);
+}
+.card:hover, .community:hover { border-color: var(--glass-edge-hi); background:
+    radial-gradient(120% 90% at 0% 0%, rgba(255,255,255,.1), transparent 45%),
+    linear-gradient(160deg, rgba(255,255,255,.08), rgba(255,255,255,.02) 45%, rgba(var(--sky),.05)); }
+.price { border-color: rgba(157,212,245,.3); background:
+    radial-gradient(120% 90% at 0% 0%, rgba(255,255,255,.08), transparent 45%),
+    linear-gradient(180deg, rgba(var(--sky),.09), rgba(255,255,255,.02) 55%); }
+.where div + div { border-color: var(--glass-edge); }
+.langs li { border-color: var(--glass-edge); background: rgba(255,255,255,.04); }
+.steps .n span, .vsteps .n, .psteps .n { border-color: var(--glass-edge); }
+
+/* The logo leaves without blur (blur on a large picture looked low-resolution): it lifts a little and sinks
+   under a soft edge, like going below a horizon. Where the browser has no scroll timelines it simply stays. */
+@keyframes mark-in { from { opacity: 0; transform: scale(.94) translateY(14px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes mark-out {
+  from { opacity: 1; transform: none; -webkit-mask-position: 0 100%; mask-position: 0 100%; }
+  to { opacity: 0; transform: translateY(-56px) scale(.97); -webkit-mask-position: 0 0; mask-position: 0 0; }
+}
+@supports (animation-timeline: view()) {
+  .mark-wrap {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 42%); mask-image: linear-gradient(to bottom, transparent 0%, #000 42%);
+    -webkit-mask-size: 100% 240%; mask-size: 100% 240%; -webkit-mask-position: 0 100%; mask-position: 0 100%;
+    animation: mark-out cubic-bezier(.4,0,.2,1) both; animation-timeline: view(); animation-range: cover 48% cover 94%;
+  }
+}
+
+/* The top bar: frosted glass, and in place of a flat grey rule a thin blue-to-teal line that fades at both ends. */
+header.top { border-bottom: 0; background: linear-gradient(180deg, rgba(10,14,21,.84), rgba(10,14,21,.58));
+  -webkit-backdrop-filter: blur(22px) saturate(1.6); backdrop-filter: blur(22px) saturate(1.6); box-shadow: 0 12px 32px -24px rgba(0,0,0,.9); }
+header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(var(--sky),.38) 28%, rgba(var(--teal),.38) 72%, transparent); }
+.bar nav a, .bar .right a.txt { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; padding-bottom: 3px;
+  transition: color .2s, background-size .3s var(--ease); }
+.bar nav a:hover, .bar .right a.txt:hover { color: #fff; background-size: 100% 1px; }
+
+@media (prefers-reduced-motion: reduce) { .mark-wrap { -webkit-mask-image: none; mask-image: none; } }
+#features > .more { display: flex; width: max-content; margin-inline: auto; }
+/* "See every feature": a clear outlined pill under the cards, not a grey text link (owner, 26 Nov). */
+#features > .more { margin-top: 48px; padding: 13px 24px; border-radius: 999px; font-size: 15px; font-weight: 500; color: #fff;
+  border: 1px solid rgba(var(--sky),.45); background: linear-gradient(180deg, rgba(var(--sky),.16), rgba(var(--blue),.08));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14), 0 10px 24px -14px rgba(0,0,0,.8); transition: border-color .2s, background .2s, transform .2s var(--ease); }
+#features > .more:hover { border-color: rgba(var(--sky),.75); background: linear-gradient(180deg, rgba(var(--sky),.24), rgba(var(--blue),.12)); transform: translateY(-2px); }
+#features > .more:active { transform: scale(.98); }
+
+/* ===== The six critique fixes, 26 Nov 2026 ===== */
+/* Glass only where it means something (the home feature cards, the price); other boxes are a quiet fill. */
+.say, .feat, .mini, .psteps, .where, .community { background: rgba(255,255,255,.035); border: 1px solid var(--glass-edge);
+  -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: inset 0 1px 0 rgba(255,255,255,.06); }
+.community:hover { background: rgba(255,255,255,.055); }
+/* A colour field behind the glass, so the glass has something to show. */
+#features, #premium { position: relative; isolation: isolate; }
+#features::before, #premium::before { content: ""; position: absolute; inset: 18% 0 4%; z-index: -1; pointer-events: none;
+  background: radial-gradient(38% 46% at 26% 58%, rgba(var(--blue),.2), transparent 70%), radial-gradient(34% 42% at 76% 52%, rgba(var(--teal),.15), transparent 70%), radial-gradient(28% 30% at 52% 88%, rgba(var(--sky),.1), transparent 70%); }
+#premium::before { inset: 30% 0 10%; background: radial-gradient(34% 50% at 24% 50%, rgba(var(--sky),.18), transparent 70%), radial-gradient(30% 40% at 78% 60%, rgba(var(--blue),.14), transparent 70%); }
+#premium .where { margin: 0 0 32px; }
+/* The current page in the top bar. */
+.bar nav a[aria-current], .bar .right a.txt[aria-current] { color: #fff; background-size: 100% 1px; }
+/* The phone menu: hidden on wide screens, a button where the links were on a phone. */
+.menu { display: none; position: relative; }
+.menu summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 4px; color: var(--ink); font-size: 14px; }
+.menu summary::-webkit-details-marker { display: none; }
+.menu summary::before { content: ""; width: 18px; height: 12px; background: linear-gradient(currentColor, currentColor) 0 0 / 100% 1.5px no-repeat, linear-gradient(currentColor, currentColor) 0 50% / 100% 1.5px no-repeat, linear-gradient(currentColor, currentColor) 0 100% / 100% 1.5px no-repeat; }
+.menu[open] summary::before { background: linear-gradient(45deg, transparent 45%, currentColor 45%, currentColor 55%, transparent 55%), linear-gradient(-45deg, transparent 45%, currentColor 45%, currentColor 55%, transparent 55%); }
+.menu-panel { position: fixed; top: 64px; left: 0; right: 0; padding: 8px 16px 20px; display: grid;
+  background: rgba(10,14,21,.96); -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px); border-bottom: 1px solid var(--glass-edge); box-shadow: 0 24px 48px -12px rgba(0,0,0,.8); }
+.bar nav .menu-panel a { background: none; padding-bottom: 0; display: flex; align-items: center; min-height: 52px; font-size: 17px; color: var(--ink); border-bottom: 1px solid var(--line); }
+.bar nav .menu-panel a:last-child { border-bottom: 0; color: #fff; font-weight: 600; }
+@media (max-width: 767px) {
+  .bar nav > a { display: none; }
+  .menu { display: block; }
+  .frow nav, .legal span:last-child { gap: 0 24px; }
+  .frow nav a, .legal a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+
+/* Glows no longer cut off (owner, 26 Nov): the logo's scroll mask clipped its glow to the logo's own box, and
+   .prem's overflow clipped the Premium orb at the content edge. The mask box now has room round the glow (the
+   padding is given back with negative margins, so nothing moves); the page itself still clips sideways (body). */
+@supports (animation-timeline: view()) {
+  .mark-wrap { max-width: 716px; padding: 110px 48px; margin: -22px auto -110px; }
+}
+@media (max-width: 767px) { @supports (animation-timeline: view()) { .mark-wrap { padding-inline: 0; margin-top: -30px; } } }
+.prem { overflow: visible; }
+main { overflow-x: clip; } /* the free glows end at the screen edge, never widen the page */
+#features::before { background: radial-gradient(38% 46% at 30% 56%, rgba(var(--blue),.2), transparent 70%), radial-gradient(34% 42% at 72% 52%, rgba(var(--teal),.15), transparent 70%), radial-gradient(28% 30% at 52% 74%, rgba(var(--sky),.1), transparent 70%); }
+.says .orb2 { height: 280px; filter: blur(80px); }

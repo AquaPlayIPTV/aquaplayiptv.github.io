@@ -17,13 +17,16 @@
 <div class="grid" aria-hidden="true"></div>
 <div class="glow" aria-hidden="true"></div>
 
-<header class="top">
+<header class="top" lang="en" dir="ltr">
   <div class="wrap bar">
     <nav aria-label="Main">
       <a href="features.html">Features</a>
       <a href="index.html#how">How it works</a>
       <a href="index.html#premium">Premium</a>
       <a href="index.html#questions">Questions</a>
+      <details class="menu"><summary aria-label="Menu">Menu</summary>
+        <div class="menu-panel"><a href="features.html">Features</a><a href="index.html#how">How it works</a><a href="index.html#premium">Premium</a><a href="index.html#questions">Questions</a><a href="samsung.html">Samsung TV</a><a href="index.html#tvs">Download AquaPlay for free</a></div>
+      </details>
     </nav>
     <a class="logo" href="index.html" aria-label="AquaPlay home"><img src="img/logo.png" alt="AquaPlay" width="900" height="300"></a>
     <div class="right">
@@ -85,7 +88,7 @@
   </div>
 </main>
 
-<footer>
+<footer lang="en" dir="ltr">
   <div class="wrap">
     <p class="notice">⚠️ AquaPlay is a media player application ONLY. We do not provide, host, sell, or distribute TV channels, movies, playlists, or IPTV subscriptions. Users must provide their own legally acquired content.</p>
     <div class="frow">
@@ -101,5 +104,8 @@
     </div>
   </div>
 </footer>
+<script>/* the phone menu closes after a pick, a tap outside, or Escape */
+addEventListener("click",e=>{const m=document.querySelector(".menu[open]");if(m&&(e.target.closest(".menu-panel a")||!e.target.closest(".menu")))m.open=false});
+addEventListener("keydown",e=>{const m=document.querySelector(".menu[open]");if(m&&e.key==="Escape"){m.open=false;m.querySelector("summary").focus()}});</script>
 </body>
 </html>
