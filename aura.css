@@ -461,10 +461,10 @@ main { overflow-x: clip; } /* the free glows end at the screen edge, never widen
 .hero-note a { color: #9dd4f5; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(157,212,245,.4); }
 .hero-note a:hover { text-decoration-color: currentColor; }
 .hero-note code { font: 600 .95em ui-monospace, "Cascadia Mono", Consolas, monospace; color: var(--ink); }
-.hero-shot { margin-top: 72px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.9); }
 .card .shot { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: 24px;
   border-radius: 10px; border: 1px solid var(--line2); }
 .card.wide { grid-column: 1 / -1; }
 .card.wide p { max-width: 70ch; }
 .card .facts { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; letter-spacing: .02em; color: var(--ink3); }
-@media (max-width: 767px) { .hero-shot { margin-top: 48px; } .hero .badge { width: 100%; } }
+.where strong { font-weight: 700; color: #fff; }
+@media (max-width: 767px) { .hero .badge { width: 100%; } }
