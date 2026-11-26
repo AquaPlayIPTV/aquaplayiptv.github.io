@@ -448,3 +448,23 @@ header.top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 
 main { overflow-x: clip; } /* the free glows end at the screen edge, never widen the page */
 #features::before { background: radial-gradient(38% 46% at 30% 56%, rgba(var(--blue),.2), transparent 70%), radial-gradient(34% 42% at 72% 52%, rgba(var(--teal),.15), transparent 70%), radial-gradient(28% 30% at 52% 74%, rgba(var(--sky),.1), transparent 70%); }
 .says .orb2 { height: 280px; filter: blur(80px); }
+
+/* Discord in the top bar (owner, 26 Nov); on phones it is in the menu instead. */
+.bar .right .discord svg { width: 16px; height: 16px; }
+@media (max-width: 767px) { .bar .right .discord { display: none; } }
+
+/* ===== Friend's feedback, 26 Nov 2026: the platforms and a picture of the app first, a shorter page ===== */
+.hero .badges { margin-top: 4px; }
+.hero .badge { background: rgba(0,0,0,.55); border-color: rgba(255,255,255,.42); }
+.hero .badge:hover { background: #000; border-color: #fff; }
+.hero-note { margin-top: 20px; font-size: 14px; color: var(--ink3); }
+.hero-note a { color: #9dd4f5; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(157,212,245,.4); }
+.hero-note a:hover { text-decoration-color: currentColor; }
+.hero-note code { font: 600 .95em ui-monospace, "Cascadia Mono", Consolas, monospace; color: var(--ink); }
+.hero-shot { margin-top: 72px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.9); }
+.card .shot { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; margin-bottom: 24px;
+  border-radius: 10px; border: 1px solid var(--line2); }
+.card.wide { grid-column: 1 / -1; }
+.card.wide p { max-width: 70ch; }
+.card .facts { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; letter-spacing: .02em; color: var(--ink3); }
+@media (max-width: 767px) { .hero-shot { margin-top: 48px; } .hero .badge { width: 100%; } }

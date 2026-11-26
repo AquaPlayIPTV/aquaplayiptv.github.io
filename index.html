@@ -47,11 +47,12 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
       <a href="#premium">Premium</a>
       <a href="#questions">Questions</a>
       <details class="menu"><summary aria-label="Menu">Menu</summary>
-        <div class="menu-panel"><a href="features.html">Features</a><a href="#how">How it works</a><a href="#premium">Premium</a><a href="#questions">Questions</a><a href="samsung.html">Samsung TV</a><a href="#tvs">Download AquaPlay for free</a></div>
+        <div class="menu-panel"><a href="features.html">Features</a><a href="#how">How it works</a><a href="#premium">Premium</a><a href="#questions">Questions</a><a href="samsung.html">Samsung TV</a><a href="https://discord.gg/5A5mDrwK8w">Discord</a><a href="#tvs">Download AquaPlay for free</a></div>
       </details>
     </nav>
     <a class="logo" href="#top" aria-label="AquaPlay home"><img src="img/logo.png" alt="AquaPlay" width="900" height="300"></a>
     <div class="right">
+      <a class="btn btn-ghost btn-sm discord" href="https://discord.gg/5A5mDrwK8w"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>Discord</a>
       <a class="txt" href="samsung.html">Samsung</a>
       <a class="btn btn-white btn-sm" href="#tvs">Download</a>
     </div>
@@ -63,20 +64,23 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
     <div class="copy">
       <h1 id="hero-h" class="in" style="--d:.05s">The only IPTV player <span class="tint">you need.</span></h1>
       <p class="lead in" style="--d:.15s">Lightweight, fast, stable, responsive and maintained. AquaPlay plays your own M3U, Xtream Codes or Stalker/MAG playlist on Samsung and Android TVs, with a full guide, up to 14 days of catch-up and subtitles in 17 languages.</p>
-      <div class="ctas in" style="--d:.25s">
-        <a class="btn btn-white" href="#tvs">Download AquaPlay for free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost" href="features.html">See every feature</a>
+      <div class="badges in" id="tvs" style="--d:.25s">
+        <a class="badge" href="samsung.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8"/></svg>
+          <span><small>Install on</small>Samsung TV</span>
+        </a>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=com.aquaplay.tv">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M10 8.2v4.6l4-2.3Z" fill="currentColor"/><path d="M8 21h8"/></svg>
+          <span><small>Download from</small>Google Play</span>
+        </a>
+        <a class="badge" href="https://github.com/AquaPlayIPTV/aquaplay-android/releases/latest/download/AquaPlay.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          <span><small>Download the</small>APK</span>
+        </a>
       </div>
+      <p class="hero-note in" style="--d:.32s">Samsung installs once from a computer: <a href="samsung.html">how</a>. On Fire TV, open Downloader and type <code>1167505</code>.</p>
     </div>
-    <!-- the logo, large: it develops in once on load (blur to sharp, a light sweeps across the wordmark),
-         then lifts away and fades as it scrolls off the top (scroll-driven, where the browser supports it) -->
-    <div class="mark-wrap" aria-hidden="true">
-      <div class="mark">
-        <span class="mark-glow"></span>
-        <img src="img/logo.png" alt="" width="900" height="300" fetchpriority="high">
-        <span class="shine"></span>
-      </div>
-    </div>
+    <div class="frame-pic hero-shot in" style="--d:.4s"><img src="img/g/01-channels-1280.jpg" srcset="img/g/01-channels-800.jpg 800w, img/g/01-channels-1280.jpg 1280w, img/g/01-channels.jpg 1920w" sizes="(max-width: 1100px) 92vw, 1000px" alt="AquaPlay on a TV: the channel list with the guide beside the picture" width="1920" height="1080" fetchpriority="high"></div>
   </section>
 
   <section class="strip" aria-labelledby="strip-h">
@@ -91,37 +95,6 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="12" rx="2"/><path d="M12 17v4M9 21h6"/></svg>Google TV</li>
       </ul>
     </div>
-  </section>
-
-  <section class="block wrap" id="features" aria-labelledby="feat-h">
-    <div class="orb" style="top:50%;left:0;background:rgba(var(--blue),.1)" aria-hidden="true"></div>
-    <div class="head center">
-      <h2 id="feat-h">Everything a night of TV needs.</h2>
-      <p class="lead">Live channels, the shows you missed, films and series, in your language. All of it with the arrows and OK on the remote you already hold.</p>
-    </div>
-    <div class="cards">
-      <div class="card" style="--c:var(--blue)"><span class="blob" aria-hidden="true"></span>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 4v16M13 13h5M13 16.5h3"/></svg></span>
-        <h3>Live TV and the full guide</h3>
-        <p>A grid guide beside the picture, search and reminders, favourites, and your own channel order and numbers.</p>
-      </div>
-      <div class="card" style="--c:var(--sky)"><span class="blob" aria-hidden="true"></span>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v4h4"/><path d="M12 8v4l3 2"/></svg></span>
-        <h3>Catch-up and rewind</h3>
-        <p>Replay shows from up to 14 days back, start over a show that is on now, and rewind live TV, where your provider keeps it.</p>
-      </div>
-      <div class="card" style="--c:var(--teal)"><span class="blob" aria-hidden="true"></span>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 3v18M17 3v18M3 8h4M3 16h4M17 8h4M17 16h4"/></svg></span>
-        <h3>Films and series</h3>
-        <p>Story, cast and a row of episodes on a page of their own. Simkl marks what you finish; TheIntroDB skips the intro.</p>
-      </div>
-      <div class="card" style="--c:var(--blue)"><span class="blob" aria-hidden="true"></span>
-        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 13h4m3 0h3M7 16h7"/></svg></span>
-        <h3>Subtitles in your language</h3>
-        <p>17 languages, Hebrew and Arabic right to left. Live channels and films switch subtitles on in yours by themselves.</p>
-      </div>
-    </div>
-    <a class="more" href="features.html">See every feature <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg></a>
   </section>
 
   <section class="steps-sec" id="how" aria-labelledby="how-h">
@@ -144,52 +117,41 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
     </div>
   </section>
 
-  <section class="says" aria-labelledby="says-h">
-    <div class="orb2" aria-hidden="true"></div>
-    <div class="wrap block" style="position:relative">
-      <h2 id="says-h">Built to stay light.</h2>
-      <div class="say-grid">
-        <div class="say">
-          <h3>Made for the TV you already own</h3>
-          <p>Not just the newest one. AquaPlay runs on Samsung TVs from 2017, and very big guides get memory sizes of their own, so the list keeps up with the remote.</p>
-          <p class="facts">Lightweight · fast · Tizen 3.0 and later</p>
-        </div>
-        <div class="say">
-          <h3>Maintained, release after release</h3>
-          <p>Every update comes with its own What's new, in your language. On Samsung, AquaPlay tells you when a new version is out.</p>
-          <p class="facts">Stable · responsive · kept up to date</p>
-        </div>
+  <section class="block wrap" id="features" aria-labelledby="feat-h">
+    <div class="orb" style="top:50%;left:0;background:rgba(var(--blue),.1)" aria-hidden="true"></div>
+    <div class="head center">
+      <h2 id="feat-h">Everything a night of TV needs.</h2>
+      <p class="lead">Live channels, the shows you missed, films and series, in your language. All of it with the arrows and OK on the remote you already hold.</p>
+    </div>
+    <div class="cards">
+      <div class="card" style="--c:var(--blue)"><span class="blob" aria-hidden="true"></span>
+        <img class="shot" src="img/g/03-schedule-800.jpg" srcset="img/g/03-schedule-800.jpg 800w, img/g/03-schedule-1280.jpg 1280w" sizes="(max-width: 900px) 92vw, 560px" alt="The guide in AquaPlay" width="1920" height="1080" loading="lazy" decoding="async">
+        <h3>Live TV and the full guide</h3>
+        <p>A grid guide beside the picture, search and reminders, favourites, and your own channel order and numbers.</p>
+      </div>
+      <div class="card" style="--c:var(--sky)"><span class="blob" aria-hidden="true"></span>
+        <img class="shot" src="img/g/05-catch-up-800.jpg" srcset="img/g/05-catch-up-800.jpg 800w, img/g/05-catch-up-1280.jpg 1280w" sizes="(max-width: 900px) 92vw, 560px" alt="Catch-up in AquaPlay" width="1920" height="1080" loading="lazy" decoding="async">
+        <h3>Catch-up and rewind</h3>
+        <p>Replay shows from up to 14 days back, start over a show that is on now, and rewind live TV, where your provider keeps it.</p>
+      </div>
+      <div class="card" style="--c:var(--teal)"><span class="blob" aria-hidden="true"></span>
+        <img class="shot" src="img/g/99-film-paused-800.jpg" srcset="img/g/99-film-paused-800.jpg 800w, img/g/99-film-paused-1280.jpg 1280w" sizes="(max-width: 900px) 92vw, 560px" alt="A film paused in AquaPlay" width="1920" height="1080" loading="lazy" decoding="async">
+        <h3>Films and series</h3>
+        <p>Story, cast and a row of episodes on a page of their own. Simkl marks what you finish; TheIntroDB skips the intro.</p>
+      </div>
+      <div class="card" style="--c:var(--blue)"><span class="blob" aria-hidden="true"></span>
+        <img class="shot" src="img/g/93-subtitles-found-online-800.jpg" srcset="img/g/93-subtitles-found-online-800.jpg 800w, img/g/93-subtitles-found-online-1280.jpg 1280w" sizes="(max-width: 900px) 92vw, 560px" alt="Subtitles found online in AquaPlay" width="1920" height="1080" loading="lazy" decoding="async">
+        <h3>Subtitles in your language</h3>
+        <p>17 languages, Hebrew and Arabic right to left. Live channels and films switch subtitles on in yours by themselves.</p>
+      </div>
+      <div class="card wide" style="--c:var(--teal)"><span class="blob" aria-hidden="true"></span>
+        <h3>Built to stay light</h3>
+        <p>Runs on Samsung TVs from 2017 (Tizen 3.0 and later), keeps up with the remote even on very big guides, and every update comes with its own What's new, in your language.</p>
+        <p class="facts">Lightweight · fast · stable · kept up to date</p>
       </div>
     </div>
+    <a class="more" href="features.html">See every feature <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg></a>
   </section>
-
-  <!-- the download: a pure black band with two plain black buttons, store-badge style (own icons, no store logos) -->
-  <section class="get" id="tvs" aria-labelledby="tvs-h">
-    <div class="wrap">
-      <h2 id="tvs-h">Get AquaPlay.</h2>
-      <p class="lead">Free on Samsung. On Google Play for Android TV and Google TV. The APK for Fire TV and other boxes.</p>
-      <div class="badges">
-        <a class="badge" href="samsung.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8"/></svg>
-          <span><small>Install on</small>Samsung TV</span>
-        </a>
-        <a class="badge" href="https://play.google.com/store/apps/details?id=com.aquaplay.tv">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M10 8.2v4.6l4-2.3Z" fill="currentColor"/><path d="M8 21h8"/></svg>
-          <span><small>Download from</small>Google Play</span>
-        </a>
-        <a class="badge" href="https://github.com/AquaPlayIPTV/aquaplay-android/releases/latest/download/AquaPlay.apk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-          <span><small>Download the</small>APK</span>
-        </a>
-      </div>
-      <p class="note">On Samsung, AquaPlay is installed once from a computer with Apps2Samsung. <a href="samsung.html">How it works</a><br>On Fire TV, open Downloader and type <code>1167505</code>.</p>
-      <a class="community" href="https://discord.gg/5A5mDrwK8w">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>
-        <span><b>Join the AquaPlay Discord</b><small>Ask questions and get help from other AquaPlay users</small></span>
-      </a>
-    </div>
-  </section>
-
 
   <!-- Premium for the APK: sold once on the licence site; Samsung is free, Google Play sells it in the app -->
   <section class="block wrap prem" id="premium" aria-labelledby="prem-h">
@@ -199,7 +161,7 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
       <p class="lead">Pay once, keep it. For Fire TV and Android boxes without Google Play. One payment unlocks every Premium feature on one TV. No subscription, nothing renews.</p>
     </div>
     <div class="where">
-      <div><b>Samsung TV</b>Every feature, free. <a href="https://ko-fi.com/devdolev">Ko-fi</a> if you'd like to give something back.</div>
+      <div><b>Samsung TV</b>Every feature, free. <a href="https://ko-fi.com/devdolev">Donate</a> if you'd like to give something back.</div>
       <div><b>Google Play</b>Buy Premium inside the app, through Google Play.</div>
       <div class="here"><b>APK</b>Fire TV and boxes without Google Play: install it with Downloader, code <code>1167505</code>, and buy Premium here.</div>
     </div>
@@ -270,17 +232,6 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
     </div>
   </section>
 
-  <section class="close" aria-labelledby="close-h">
-    <div class="wrap">
-      <h2 id="close-h">Ready to watch?</h2>
-      <p class="lead">Bring your playlist. AquaPlay does the rest, on Samsung, Android TV and Fire TV.</p>
-      <div class="ctas">
-        <a class="btn btn-white btn-lg" href="samsung.html">Install on Samsung <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-        <a class="btn btn-ghost btn-lg" href="https://play.google.com/store/apps/details?id=com.aquaplay.tv">Download from Google Play</a>
-        <a class="btn btn-ghost btn-lg" href="https://github.com/AquaPlayIPTV/aquaplay-android/releases/latest/download/AquaPlay.apk">Download the APK</a>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
@@ -289,7 +240,7 @@ if (/^#[a-z]=/.test(location.hash)) location.replace('pair.html' + location.sear
     <div class="frow">
       <a href="#top" aria-label="Back to top"><img src="img/logo.png" alt="AquaPlay" width="900" height="300"></a>
       <nav aria-label="Footer">
-        <a href="features.html">Features</a><a href="samsung.html">Samsung</a><a href="https://aquaplay.live/pair.html">Pairing page</a><a href="https://discord.gg/5A5mDrwK8w">Discord</a><a href="https://x.com/AquaPlayIPTV">X</a><a href="https://ko-fi.com/devdolev">Ko-fi</a>
+        <a href="features.html">Features</a><a href="samsung.html">Samsung</a><a href="https://aquaplay.live/pair.html">Pairing page</a><a href="https://discord.gg/5A5mDrwK8w">Discord</a><a href="https://x.com/AquaPlayIPTV">X</a><a href="https://ko-fi.com/devdolev">Donate</a>
       </nav>
       <small>© 2026 AquaPlay</small>
     </div>
