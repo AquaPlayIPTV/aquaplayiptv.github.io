@@ -29,9 +29,9 @@
   *{ box-sizing:border-box; }
   body{
     margin:0; min-height:100vh; padding:28px 20px 40px;
-    font:16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    color:#e9edf4; background:#0a0c10;
-    background-image:radial-gradient(700px 480px at 10% -10%, rgba(76,141,255,.28), rgba(76,141,255,0) 62%);
+    font:16px/1.5 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color:#f4f4f5; background:#0a0e15;
+    background-image:radial-gradient(60% 420px at 50% -80px, rgba(52,120,255,.46), transparent 70%), radial-gradient(40% 320px at 90% -40px, rgba(20,184,210,.26), transparent 70%);
     background-repeat:no-repeat;
   }
   main{ max-width:480px; margin:0 auto; }
@@ -39,18 +39,19 @@
      own setup screen stands. 540x180 behind a 240x80 box: sharp on a phone's
      screen, and a WebP so the page carries it for under 40 KB. */
   .logo{ display:block; width:240px; height:80px; margin:4px auto 18px; }
-  h1{ font-size:26px; line-height:1.2; margin:0 0 6px; text-align:center; }
-  .sub{ color:#9aa3b5; margin:0 0 22px; text-align:center; }
+  h1{ font-size:28px; line-height:1.15; margin:0 0 8px; text-align:center; font-weight:700; letter-spacing:-.03em; color:#fff; }
+  .sub{ color:#aab3c2; margin:0 0 22px; text-align:center; }
   #form{ margin-top:22px; }
   .tabs{ display:flex; gap:8px; margin-bottom:18px; }
   .tabs button{
-    flex:1; padding:11px 8px; border-radius:12px; font:inherit; font-weight:600;
-    color:#c3cad6; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+    flex:1; padding:9px 4px; border-radius:14px; font-size:15px; line-height:1.25; font:inherit; font-weight:600;
+    color:#c9d1dd; background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01)); border:1px solid rgba(120,160,235,.17);
   }
-  .tabs button[aria-selected="true"]{ color:#fff; background:#4c8dff; border-color:#4c8dff; }
+  .tabs button[aria-selected="false"]{ color:#9aa5b5; }
+  .tabs button[aria-selected="true"]{ color:#fff; border-color:#4c8dff; background:linear-gradient(180deg, rgba(76,141,255,.38), rgba(76,141,255,.12)); box-shadow:inset 0 1px 0 rgba(255,255,255,.2); }
   label{ display:block; margin:0 0 14px; }
-  label > span{ display:block; font-size:14px; color:#9aa3b5; margin:0 0 6px; }
-  label em{ font-style:normal; color:#6b7385; }
+  label > span{ display:block; font-size:14px; color:#aab3c2; margin:0 0 6px; }
+  label em{ font-style:normal; color:#8d97a8; }
   /* The page's own words cannot be selected, only what is typed or pasted
      and the details to send on (B9: a copy ran on from a box into the
      labels and the note under it, and every paste brought them back). */
@@ -58,50 +59,70 @@
   input, textarea, .det{ -webkit-user-select:text; user-select:text; -webkit-touch-callout:default; }
   input{
     width:100%; padding:13px 14px; border-radius:12px; font:inherit; font-size:16px;
-    color:#fff; background:rgba(8,11,17,.7); border:1px solid rgba(255,255,255,.14);
+    color:#fff; background:rgba(10,14,21,.7); border:1px solid rgba(120,160,235,.17);
   }
   /* Hebrew and Arabic: the page right to left, an address or a login as typed. */
   html[dir=rtl] input{ direction:ltr; text-align:left; }
-  input:focus{ outline:none; border-color:#4c8dff; box-shadow:0 0 0 3px rgba(76,141,255,.25); }
-  .file-pick input{ padding:10px 12px; font-size:15px; color:#c3cad6; }
+  input:focus{ outline:none; border-color:#4c8dff; box-shadow:0 0 0 3px rgba(76,141,255,.35); }
+  .file-pick input{ padding:10px 12px; font-size:15px; color:#c9d1dd; }
   .file-note{ margin:-6px 0 14px; color:#6fe0a0; }
   .send{
-    width:100%; margin-top:8px; padding:15px; border:0; border-radius:14px;
+    width:100%; margin-top:8px; padding:15px; border:0; border-radius:99px;
     font:inherit; font-size:17px; font-weight:700; color:#fff;
-    background:linear-gradient(118deg, #6aa3ff 0%, #4c8dff 46%, #3a64e8 100%);
+    background:linear-gradient(118deg, #6aa3ff, #4c8dff 46%, #3a64e8); box-shadow:0 10px 24px -12px rgba(20,60,160,.9);
   }
   .send:disabled{ opacity:.55; }
-  .send.another{ margin-top:12px; background:transparent; border:2px solid #4c8dff; color:#cfe0ff; }
+  .send.another{ margin-top:12px; background:rgba(255,255,255,.03); border:1px solid rgba(120,160,235,.32); color:#f4f4f5; }
   .msg{ min-height:24px; margin:16px 0 0; color:#ff8a95; }
   .msg.ok{ color:#6fe0a0; }
-  .msg.wait{ color:#9aa3b5; }
+  .msg.wait{ color:#aab3c2; }
   /* The TV's answer when it could not connect: what happened, what to try,
      and the details for support, for a screenshot. */
-  .tv-answer{ margin:16px 0 0; padding:16px; border-radius:12px; background:#1a1f2b; border:1px solid #3a2530; }
+  .tv-answer{ margin:16px 0 0; padding:16px; border-radius:12px; background:#121821; border:1px solid #3a2530; }
   .tv-answer h2{ margin:0 0 8px; font-size:17px; color:#ff8a95; }
   .tv-answer p{ margin:0 0 10px; }
   .tv-answer ul{ margin:0 0 12px; padding-left:20px; }
   .tv-answer li{ margin:0 0 6px; }
-  .tv-answer .det{ margin-top:10px; padding:10px 12px; border-radius:8px; background:#11151d; font-size:12px; line-height:1.5; color:#9aa3b5; word-wrap:break-word; }
+  .tv-answer .det{ margin-top:10px; padding:10px 12px; border-radius:8px; background:#11151d; font-size:12px; line-height:1.5; color:#aab3c2; word-wrap:break-word; }
   .tv-answer .det b{ display:block; margin-bottom:4px; color:#c8cfdb; }
   .tv-answer .det span{ display:block; }
-  .note{ margin-top:26px; font-size:13px; color:#6b7385; }
+  .note{ margin-top:26px; font-size:13px; color:#8d97a8; }
   .plist{ margin:0 0 18px; padding:13px 14px; border-radius:12px; background:rgba(255,255,255,.06); color:#e9edf4; font-size:15px; line-height:1.5; }
   /* The next code, read here rather than in the camera app: one button, then
      the camera in the page, then the page carries on by itself. */
   .scan-btn{
-    width:100%; margin-top:16px; padding:15px; border-radius:14px;
+    width:100%; margin-top:16px; padding:15px; border-radius:99px;
     font:inherit; font-size:17px; font-weight:700; color:#fff;
-    background:linear-gradient(118deg, #6aa3ff 0%, #4c8dff 46%, #3a64e8 100%); border:0;
+    background:linear-gradient(118deg, #6aa3ff, #4c8dff 46%, #3a64e8); box-shadow:0 10px 24px -12px rgba(20,60,160,.9); border:0;
   }
-  .scan-btn.quiet{ font-weight:600; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); }
+  .scan-btn.quiet{ font-weight:600; color:#f4f4f5; background:rgba(255,255,255,.04); border:1px solid rgba(120,160,235,.17); }
   .scanner{ margin-top:16px; }
   .scanner video{ display:block; width:100%; max-height:62vh; object-fit:cover; border-radius:16px; background:#000; }
-  .scan-hint{ margin:12px 0 0; text-align:center; color:#9aa3b5; }
+  .scan-hint{ margin:12px 0 0; text-align:center; color:#aab3c2; }
   /* Where the browser cannot read a code itself (an iPhone's Safari), the
      same step said in words: the camera app is the way to the next code. */
-  .scan-alt{ margin:16px 0 0; padding:13px 14px; border-radius:12px; background:rgba(255,255,255,.06); color:#c3cad6; font-size:15px; line-height:1.45; text-align:center; }
+  .scan-alt{ margin:16px 0 0; padding:13px 14px; border-radius:12px; background:rgba(255,255,255,.06); color:#c9d1dd; font-size:15px; line-height:1.45; text-align:center; }
   [hidden]{ display:none !important; }
+  .send:active, .scan-btn:active{ transform:scale(.98); }
+  button:focus-visible, .file-pick:focus-within > span{ outline:2px solid #4c8dff; outline-offset:2px; }
+  input::placeholder{ color:#5b6576; }
+  input[aria-invalid=true]{ border-color:#ff8a95; box-shadow:0 0 0 3px rgba(255,138,149,.2); }
+  .file-pick{ position:relative; }
+  .file-pick input{ position:absolute; width:1px; height:1px; opacity:0; }
+  .file-pick > span{ margin:0; padding:12px; border-radius:99px; text-align:center; font-size:15px; font-weight:600; color:#f4f4f5; border:1px solid rgba(120,160,235,.25); background:rgba(255,255,255,.04); }
+  .lock{ display:flex; gap:8px; align-items:flex-start; margin:2px 0 14px; font-size:14px; color:#aab3c2; }
+  .lock svg{ flex:none; width:16px; height:16px; margin-top:2px; }
+  .done .tabs, .done label, .done .lock, .done #send, .done .file-note{ display:none; }
+  .done{ display:flex; flex-direction:column; }
+  .done #another{ order:1; margin-top:18px; }
+  .done #msg{ position:relative; padding:66px 0 10px; font-size:20px; text-align:center; color:#fff; }
+  .done #msg::before{ content:""; position:absolute; top:4px; left:50%; width:44px; height:44px; margin-left:-23px; border:2px solid #6fe0a0; border-radius:50%; }
+  .done #msg::after{ content:""; position:absolute; top:15px; left:50%; width:9px; height:17px; margin-left:-6px; border:solid #6fe0a0; border-width:0 3px 3px 0; transform:rotate(45deg); }
+  /* The home page's Lifetime card, round each step. */
+  .card{ position:relative; margin-top:22px; padding:22px 18px; border-radius:24px; border:1px solid rgba(76,141,255,.42);
+    background:radial-gradient(120% 90% at 0 0, rgba(255,255,255,.08), transparent 45%), linear-gradient(180deg, rgba(76,141,255,.14), rgba(255,255,255,.02) 55%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.14), 0 24px 48px -24px rgba(0,0,0,.7); }
+  .card::before{ content:""; position:absolute; top:0; left:15%; right:15%; height:1px; background:linear-gradient(90deg, transparent, rgba(106,163,255,.95), transparent); }
 </style>
 </head>
 <body>
@@ -116,7 +137,7 @@
   <!-- A first television sent everything at once (js/pair.js's #b=): this
        page fetches it once and holds it, ready for the second television's
        own code (below). Not saved anywhere but here, and not for long. -->
-  <div id="backup" hidden>
+  <div id="backup" class="card" hidden>
     <p class="msg wait" id="b-status" role="status"></p>
     <p class="note" id="b-note" hidden></p>
     <!-- Or kept: the same, saved on the phone as a backup file. -->
@@ -126,7 +147,7 @@
 
   <!-- The second television is listening for what this page is holding
        (js/pair.js's #x=). -->
-  <div id="restore" hidden>
+  <div id="restore" class="card" hidden>
     <p class="sub" id="r-title"></p>
     <p class="plist" id="r-list" hidden></p>
     <button type="button" class="send" id="r-send" hidden></button>
@@ -140,14 +161,14 @@
   <!-- A subtitle file for what the TV is playing (js/subsmenu.js's #s=):
        read here, sent the way a playlist's file is (sendSubs, below). -->
   <!-- An AquaPlay promo code, for the TV whose code was scanned (#c=; F2). -->
-  <div id="promo-send" hidden>
+  <div id="promo-send" class="card" hidden>
     <p class="sub" id="c-intro"></p>
     <textarea id="c-code" rows="4" autocomplete="off" autocapitalize="characters" spellcheck="false" style="width:100%;box-sizing:border-box;font:inherit;padding:10px;border-radius:10px"></textarea>
     <button type="button" class="send" id="c-btn"></button>
     <p class="msg" id="c-status" role="status"></p>
   </div>
 
-  <div id="subs-send" hidden>
+  <div id="subs-send" class="card" hidden>
     <p class="sub" id="s-intro"></p>
     <button type="button" class="send" id="s-btn"></button>
     <input type="file" id="s-file" accept=".srt,.vtt,application/x-subrip,text/vtt" hidden>
@@ -169,7 +190,7 @@
   <!-- novalidate: the page says itself, in the viewer's language, what is
        missing; the browser's own bubble stopped the send without a word on
        the page (2 Nov 2026). -->
-  <form id="form" autocomplete="off" novalidate hidden>
+  <form id="form" class="card" autocomplete="off" novalidate hidden>
     <div class="tabs" role="tablist">
       <button type="button" role="tab" id="tab-m3u" aria-selected="true">M3U</button>
       <button type="button" role="tab" id="tab-xtream" aria-selected="false">Xtream Codes</button>
@@ -178,7 +199,7 @@
 
     <div id="f-m3u">
       <label><span id="t-url">Playlist URL</span>
-        <input type="url" id="m-url" dir="ltr" inputmode="url" autocapitalize="off" spellcheck="false" autocorrect="off" autocomplete="off"></label>
+        <input type="url" id="m-url" placeholder="http://provider.example/get.php?username=…" dir="ltr" inputmode="url" autocapitalize="off" spellcheck="false" autocorrect="off" autocomplete="off"></label>
       <!-- Or the playlist's file, from this phone: uploaded to the relay as a
            file of its own, locked like everything else (sendFile, below). -->
       <label class="file-pick"><span id="t-file">Or a playlist file from this phone</span>
@@ -190,7 +211,7 @@
 
     <div id="f-xtream" hidden>
       <label><span id="t-host">Server URL</span>
-        <input type="url" id="x-host" dir="ltr" inputmode="url" autocapitalize="off" spellcheck="false" autocorrect="off" autocomplete="off"></label>
+        <input type="url" id="x-host" placeholder="http://server.example:8080" dir="ltr" inputmode="url" autocapitalize="off" spellcheck="false" autocorrect="off" autocomplete="off"></label>
       <label><span id="t-user">Username</span>
         <input type="text" id="x-user" dir="ltr" autocapitalize="off" spellcheck="false" autocorrect="off" autocomplete="off"></label>
       <label><span id="t-pass">Password</span>
@@ -214,11 +235,11 @@
     <label><span><span id="t-name">Playlist name</span> <em id="t-opt2">optional</em></span>
       <input type="text" id="name" maxlength="80"></label>
 
+    <p class="note lock"><svg viewBox="0 0 24 24" fill="none" stroke="#6aa3ff" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span id="note"></span></p>
     <button type="submit" class="send" id="send">Send to TV</button>
     <button type="button" class="send another" id="another" hidden>Add another playlist</button>
     <p class="msg" id="msg" role="status"></p>
     <div class="tv-answer" id="tv-answer" hidden></div>
-    <p class="note" id="note"></p>
   </form>
 </main>
 
@@ -1150,7 +1171,7 @@
     var box = $('tv-answer');
     while (box.firstChild) box.removeChild(box.firstChild);
     if (o.ok) {
-      box.hidden = true; msg(WORDS.tvOk.replace('{name}', o.name || ''), true);
+      box.hidden = true; msg(WORDS.tvOk.replace('{name}', o.name || ''), true); $('form').classList.add('done');
       if (more) $('another').hidden = false;
       return;
     }
@@ -1166,7 +1187,7 @@
       o.details.forEach(function (l) { add('span', l, det); });
     }
     box.hidden = false;
-    $('send').disabled = false;
+    $('send').disabled = false; $('send').hidden = false;
   }
   /* Every answer already shown, across sends: the next playlist's listening
      starts a few seconds back and would hear the last one's answer again. */
@@ -1175,7 +1196,7 @@
     var seen = heard, tries = 0, done = false;
     var look = function () {
       if (done) return;
-      if (++tries > 40) { msg(WORDS.sent, true); return; }
+      if (++tries > 40) { msg(WORDS.sent, true); $('form').classList.add('done'); return; }
       fetch(RELAY + relay[1] + '/json?poll=1&since=' + since, { cache: 'no-store', referrerPolicy: 'no-referrer' }).then(function (r) {
         return r.ok ? r.text() : '';
       }).then(function (text) {
@@ -1199,14 +1220,22 @@
     ['name', 'm-url', 'm-epg', 'x-host', 'x-user', 'x-pass', 'x-epg'].forEach(function (id) { $(id).value = ''; });
     $('m-file').value = ''; $('file-note').hidden = true;
     $('another').hidden = true; $('tv-answer').hidden = true;
-    $('send').disabled = false; put('send', 'send'); msg('');
+    $('send').disabled = false; $('send').hidden = false; $('form').classList.remove('done'); put('send', 'send'); msg('');
     window.scrollTo(0, 0);
   };
 
+  $('form').oninput = function (ev) { ev.target.removeAttribute('aria-invalid'); };
   $('form').onsubmit = function (ev) {
     ev.preventDefault();
     var p = payload();
-    if (p.error) { msg(p.error); return false; }
+    if (p.error) {
+      msg(p.error);
+      var box = [].filter.call($('form').querySelectorAll('input[type=url],input[type=text]'), function (i) { return i.offsetParent && i.id !== 'name' && !/epg/.test(i.id); });
+      box = box.filter(function (i) { return !i.value; })[0] || box[0];
+      if (box) { box.setAttribute('aria-invalid', 'true'); box.focus(); }
+      setTimeout(function () { $('msg').scrollIntoView({ block: 'center' }); }, 350);
+      return false;
+    }
     $('send').disabled = true;
     put('send', 'sending');
     msg('');
@@ -1214,7 +1243,7 @@
     var since = Math.floor(Date.now() / 1000) - 5;
     (p.file ? sendFile(p) : send(p)).then(function () {
       msg(WORDS.waitTv, true);
-      put('send', 'send');
+      put('send', 'send'); $('send').hidden = true;
       listenForTv(since);
     }, function (err) {
       msg(err && err.message ? err.message : WORDS.relayFail);
