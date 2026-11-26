@@ -43,7 +43,7 @@
     <p class="lead in" style="--d:.15s">Free, with every feature, on Samsung Smart TVs from 2017 on (Tizen 3.0 or later). You install it once from your computer with Apps2Samsung.</p>
     <div class="ctas in" style="--d:.25s">
       <a class="btn btn-white" href="#install">See the five steps <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m0 0-6-6m6 6-6 6"/></svg></a>
-      <a class="btn btn-ghost" href="https://github.com/AquaPlayIPTV/aquaplay-samsung/releases/latest">Download AquaPlay for free (.wgt)</a>
+      <a class="btn btn-ghost" data-wgt href="https://github.com/AquaPlayIPTV/aquaplay-samsung/releases/latest">Download AquaPlay for free (.wgt)</a>
     </div>
   </section>
 
@@ -59,7 +59,7 @@
         <li><span class="n">02</span>
           <h3>Get Apps2Samsung on your computer</h3><p>Download it from <a href="https://github.com/Apps2Samsung/Apps2Samsung">github.com/Apps2Samsung/Apps2Samsung</a> and open it. It finds your TV.</p></li>
         <li><span class="n">03</span>
-          <h3>Download AquaPlay for free</h3><p>The .wgt file from the <a href="https://github.com/AquaPlayIPTV/aquaplay-samsung/releases/latest">latest release</a>.</p></li>
+          <h3>Download AquaPlay for free</h3><p>The .wgt file from the <a data-wgt href="https://github.com/AquaPlayIPTV/aquaplay-samsung/releases/latest">latest release</a>, downloaded at once.</p></li>
         <li><span class="n">04</span>
           <h3>Install it with Apps2Samsung</h3><p>Choose your TV, choose to install your own package, and pick the AquaPlay file. The first time, Apps2Samsung may ask you to sign in to a Samsung account, to make the certificate your TV needs.</p></li>
         <li><span class="n">05</span>
@@ -119,5 +119,10 @@
 <script>/* the phone menu closes after a pick, a tap outside, or Escape */
 addEventListener("click",e=>{const m=document.querySelector(".menu[open]");if(m&&(e.target.closest(".menu-panel a")||!e.target.closest(".menu")))m.open=false});
 addEventListener("keydown",e=>{const m=document.querySelector(".menu[open]");if(m&&e.key==="Escape"){m.open=false;m.querySelector("summary").focus()}});</script>
+<script>/* The .wgt itself, not the release page: on a click, ask GitHub which file the latest release holds (its name
+   carries the version) and download it; if GitHub does not answer, the link opens the release page as before. */
+document.addEventListener("click",e=>{const l=e.target.closest("[data-wgt]");if(!l||e.ctrlKey||e.metaKey||e.shiftKey)return;e.preventDefault();
+fetch("https://api.github.com/repos/AquaPlayIPTV/aquaplay-samsung/releases/latest").then(r=>r.ok?r.json():null)
+.then(j=>{const a=j&&(j.assets||[]).find(x=>/\.wgt$/i.test(x.name));location.href=a?a.browser_download_url:l.href}).catch(()=>{location.href=l.href})});</script>
 </body>
 </html>

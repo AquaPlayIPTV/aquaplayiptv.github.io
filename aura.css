@@ -468,3 +468,8 @@ main { overflow-x: clip; } /* the free glows end at the screen edge, never widen
 .card .facts { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 13px; letter-spacing: .02em; color: var(--ink3); }
 .where strong { font-weight: 700; color: #fff; }
 @media (max-width: 767px) { .hero .badge { width: 100%; } }
+details p code { font: 600 .95em ui-monospace, "Cascadia Mono", Consolas, monospace; color: var(--ink); }
+details p b { color: var(--ink); font-weight: 600; }
+/* The entrance runs once and then lets go (backwards, not both): an element left holding a finished animation
+   with a blur in it can vanish on some phone browsers after a jump down the page and back (owner, 26 Nov). */
+.in { animation-fill-mode: backwards; }
